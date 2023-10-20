@@ -27,7 +27,7 @@ body {
     background: #463f47;
     box-shadow: none
 }
-
+/*hover-color*/
 .back:hover {
     color: #463f47;
     cursor: pointer
