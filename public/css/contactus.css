@@ -1,0 +1,111 @@
+body{
+    background: #252124;
+    margin: 0;
+ }
+.about-link {
+    color: #7F96B3;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* STORE */
+.store-link {
+    color: #7F96B3;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* CONTACT */
+.contact-link {
+    color: #7F96B3;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* HOME */
+.home-link {
+    color: #7F96B3;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* MISERY */
+.misery-title {
+    color: #7F96B3;
+    font-size: 48px;
+    font-family: Montagu Slab;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* REGISTER */
+.register-link {
+    color: #7F96B3;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* GET IN TOUCH */
+.get-in-touch {
+    color: white;
+    font-size: 64px;
+    font-family: MuseoModerno;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* Connect with Misery. We're all ears for your questions and thoughts. Reach out today. */
+.connect-message {
+    color: white;
+    font-size: 24px;
+    font-family: Montaga;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* Email */
+.email-label {
+    color: black;
+    font-size: 24px;
+    font-family: Montaga;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* Name */
+.name-label {
+    color: black;
+    font-size: 24px;
+    font-family: Montaga;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* Description */
+.description-label {
+    color: black;
+    font-size: 24px;
+    font-family: Montaga;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* Submit */
+.submit-button {
+    color: black;
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 700;
+    text-transform: lowercase;
+    word-wrap: break-word;
+}
