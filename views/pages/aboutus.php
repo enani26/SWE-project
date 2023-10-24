@@ -53,5 +53,8 @@
         <footer class="text-center">
             <p>copyright &copy; 2021 All rights reserved by freddie Nice Inc.</p>
         </footer>
+        <?php
+include "../partials/footer.php";
+?>
     </body>
 </html>

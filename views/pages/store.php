@@ -70,5 +70,8 @@
         <div class="Register" style="left: 1282px; top: 12px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Montserrat; font-weight: 400; word-wrap: break-word">REGISTER</div>
     </div>
 </div>
+<?php
+include "../partials//footer.php";
+?>
 </body>
 </html>

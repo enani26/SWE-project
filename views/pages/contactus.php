@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/contact.css">
     <title>contact</title>
 </head>
 <body>
@@ -38,7 +38,9 @@
         </div>
         <img style="width: 1241px; height: 863px; left: 434px; top: 129px; position: absolute" src="C:\Users\Marwan.Enani\Desktop\Misery\images\c859f259ce99199e62553b5052d46e2f.png" />
     </div>
-    
+    <?php
+include "../partials/footer.php";
+?>
 </body>
 </html>
 
