@@ -2,8 +2,9 @@
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
-        <link rel="stylesheet" href="editprofile.css">
+        <link rel="stylesheet" href="../../public/css/editprofile.css">
     </head>
+    <body>
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
@@ -34,4 +35,8 @@
 </div>
 </div>
 </div>
+<?php
+include "../partials/footer.php";
+?>
+</body>
 </html>
