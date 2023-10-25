@@ -12,7 +12,9 @@ body{
     align-items: center;
     min-height: 100vh;
     background: rgb(95, 92, 92);
-    background-image: url("misery2.png");
+    /* background-image: url(/views/pages/img/misery2.png) */
+    background-image:url('../../../views/pages/img/misery2.png')
+
 
 }
 .wrapper{

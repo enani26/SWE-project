@@ -1,17 +1,21 @@
+<?php
+session_start();
+  include_once "../../includes/dbh.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../../public/css/registration.css">
+    <link rel="stylesheet" href="../../../public/css/registration.css"> 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     
         <div class="form-box register">
             <h2>Sign Up</h2>
-            <form action="#">
+            <form action="" method="post">
                 <div class="input-box">
                 <input type="text" name="firstname" required >
                 <label for="firstname">Firstname</label>
@@ -32,15 +36,15 @@
 
                 
                 <div class="input-box">
-                <input type="password" name="lastname" required >
+                <input type="password" name="password" required >
                 <label for="password">Password</label>
                 <box-icon type='solid' name='lock-alt'></box-icon>
                 <i class='bx bxs-lock-alt'></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="confirmpassword" name="confirmpassword"required >
-                    <label for="phone">Confirm Password</label>
+                    <input type="password" name="confirmpassword"required >
+                    <label for="password">Confirm Password</label>
                     <box-icon type='solid' name='lock-alt'></box-icon>
                     <i class='bx bxs-lock-alt'></i>
                     </div>
@@ -75,12 +79,11 @@
 	$lastname=htmlspecialchars($_POST["lastname"]);
 	$email=htmlspecialchars($_POST["email"]);
 	$password=htmlspecialchars($_POST["password"]);
-	$confirmpassword=htmlspecialchars($_POST["confirmpassword"]);
+	/*$confirmpassword=htmlspecialchars($_POST["confirmpassword"]);*/
     $phone=htmlspecialchars($_POST["phone"]);
-
     //insert it to database 
-	$sql="insert into signup(firstname,lastname,email,password,confirmpassword,phone) 
-	values('$firstname','$lastname','$email','$password','$confirmpassword','$phone')";
+	$sql="insert into signup(firstname,lastname,email,password,phone) 
+	values('$firstname','$lastname','$email','$password','$phone')";
 	$result=mysqli_query($conn,$sql);
 
     //redirect the user back to index.php 
