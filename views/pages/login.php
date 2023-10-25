@@ -14,19 +14,19 @@
             <h2>Login</h2>
             <form action="#">
                 <div class="input-box">
-                <input type="text" required >
+                <input type="text" name="firstname" required >
                 <label>Firstname</label>
                 <i class='bx bxs-user'></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="text" required >
+                    <input type="text" name="lastname" required >
                     <label>Lastname</label>
                     <i class='bx bxs-user'></i>
                 </div>
 
                 <div class="input-box">
-                <input type="password" required >
+                <input type="password" name="password" required >
                 <label>Password</label>
                 <box-icon type='solid' name='lock-alt'></box-icon>
                 <i class='bx bxs-lock-alt'></i>
