@@ -70,7 +70,8 @@
 		$_SESSION["email"]=$row["email"];
 		$_SESSION["password"]=$row["password"];
 		$_SESSION["phone"]=$row["phone"];
-		header("Location:index.php?login=success");
+        //redirect after a succeful login
+		header("Location:../../../index.php");
 	}
 	else	{
 		echo "Inalid Email or Password";
