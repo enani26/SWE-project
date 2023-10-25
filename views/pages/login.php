@@ -12,8 +12,8 @@
         <span class="bg-animate"></span>
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="#">
-                <div class="input-box">
+            <form action="" method="post">
+                <!-- <div class="input-box">
                 <input type="text" name="firstname" required >
                 <label>Firstname</label>
                 <i class='bx bxs-user'></i>
@@ -23,18 +23,23 @@
                     <input type="text" name="lastname" required >
                     <label>Lastname</label>
                     <i class='bx bxs-user'></i>
-                </div>
+                </div> -->
+                    <div class="input-box">
+                            <input type="text" name="email" required >
+                            <label for="email">Email Address</label>
+                            <i class='bx bx-envelope' ></i>
 
-                <div class="input-box">
-                <input type="password" name="password" required >
-                <label>Password</label>
-                <box-icon type='solid' name='lock-alt'></box-icon>
-                <i class='bx bxs-lock-alt'></i>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <div class="logreg-link">
-                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
-                </div>
+                    <div class="input-box">
+                    <input type="password" name="password" required >
+                    <label>Password</label>
+                    <box-icon type='solid' name='lock-alt'></box-icon>
+                    <i class='bx bxs-lock-alt'></i>
+                    </div>
+                    
+                    <button type="submit" class="btn">Login</button>
+                    <div class="logreg-link">
+                        <p>Don't have an account? <a href="register.php" class="register-link">Sign Up</a></p>
+                    </div>
 
 
 
@@ -48,6 +53,31 @@
 
     </div>
 
+    <?php
+   session_start();
+   include_once "../../includes/dbh.inc.php";
+   //grab data from user and see if it exists in database
+   if($_SERVER["REQUEST_METHOD"]=="POST"){
 
+    $email=$_POST["email"];
+	$password=$_POST["password"];
+	$sql="Select * from signup where email ='$email' and password='$password'";
+	$result = mysqli_query($conn,$sql);
+    if($row=mysqli_fetch_array($result))	{
+		$_SESSION["ID"]=$row[0];
+		$_SESSION["firstname"]=$row["firstname"];
+		$_SESSION["lastname"]=$row["lastname"];
+		$_SESSION["email"]=$row["email"];
+		$_SESSION["password"]=$row["password"];
+		$_SESSION["phone"]=$row["phone"];
+		header("Location:index.php?login=success");
+	}
+	else	{
+		echo "Inalid Email or Password";
+	}
+   }
+
+ 
+ ?>
 </body>
 </html>
