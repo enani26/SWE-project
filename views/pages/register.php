@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="../../../public/css/registration.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -14,7 +14,7 @@
             <form action="#">
                 <div class="input-box">
                 <input type="text" required >
-                <label for="firstname">First Name</label>
+                <label for="firstname">Firstname</label>
                 <i class='bx bxs-user'></i>
                 </div>
 
@@ -54,7 +54,7 @@
 
                 <button type="submit" class="btn">Sign up</button>
                 <div class="logreg-link">
-                    <p>Already have an account? <a href="loginn.html" class="register-link">Sign In</a></p>
+                    <p>Already have an account? <a href="login.php" class="register-link">Sign In</a></p>
                 </div>
 
 
@@ -67,5 +67,28 @@
 
 
     </div>
+    <?php
+ //grap data from user if form was submitted 
+
+  if($_SERVER["REQUEST_METHOD"]=="POST"){ //check if form was submitted
+	$firstname=htmlspecialchars($_POST["firstname"]);
+	$lastname=htmlspecialchars($_POST["lastname"]);
+	$email=htmlspecialchars($_POST["email"]);
+	$password=htmlspecialchars($_POST["password"]);
+	$confirmpassword=htmlspecialchars($_POST["confirmpassword"]);
+    $phone=htmlspecialchars($_POST["phone"]);
+
+    //insert it to database 
+	$sql="insert into signup(firstname,lastname,email,password,confirmpassword,phone) 
+	values('$firstname','$lastname','$email','$password','$confirmpassword','$phone')";
+	$result=mysqli_query($conn,$sql);
+
+    //redirect the user back to index.php 
+	if($result)	{
+		header("Location:index.php");
+	}
+}
+
+?>
 </body>
 </html>

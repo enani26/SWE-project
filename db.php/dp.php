@@ -2,7 +2,7 @@
 $servername="localhost";
 $username= "root";
 $password= "";
-$dbname= "registration_db";
+$dbname= "misery_db";
 
 $conn=mysqli_connect("servername","username","password","dbname") or die ("Coudn't connect");
 
