@@ -39,7 +39,7 @@
       <aside id="sidebar">
         <div class="sidebar-title">
           <div class="sidebar-brand">
-            <span class="material-icons-outlined">inventory</span> Bob's Inventory
+            <span class="material-icons-outlined">Misery</span> Misery's inventory
           </div>
           <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
         </div>
@@ -118,7 +118,7 @@
 
           <div class="card">
             <div class="card-inner">
-              <p class="text-primary">INVENTORY ALERTS</p>
+              <p class="text-primary">MISERY ALERTS</p>
               <span class="material-icons-outlined text-red">notification_important</span>
             </div>
             <span class="text-primary font-weight-bold">56</span>
