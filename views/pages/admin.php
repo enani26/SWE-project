@@ -57,7 +57,7 @@
           </li>
           <li class="sidebar-list-item">
             <a href="#" target="_blank">
-              <span class="material-icons-outlined">fact_check</span> Inventory
+              <span class="material-icons-outlined">fact_check</span> MISERY
             </a>
           </li>
           <li class="sidebar-list-item">
