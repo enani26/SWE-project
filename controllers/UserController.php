@@ -73,4 +73,3 @@ include_once "models/UserModel.php";
       }
       $user= new user
  }
-}
