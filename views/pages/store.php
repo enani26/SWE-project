@@ -4,7 +4,7 @@
 </title>
 <style>
     body {
-        background-color: #252124;
+        background-color:white;
     }
 
     .card {
