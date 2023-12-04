@@ -13,17 +13,6 @@
         <div class="form-box login">
             <h2>Login</h2>
             <form action="" method="post">
-                <!-- <div class="input-box">
-                <input type="text" name="firstname" required >
-                <label>Firstname</label>
-                <i class='bx bxs-user'></i>
-                </div>
-
-                <div class="input-box">
-                    <input type="text" name="lastname" required >
-                    <label>Lastname</label>
-                    <i class='bx bxs-user'></i>
-                </div> -->
                     <div class="input-box">
                             <input type="text" name="email" required >
                             <label for="email">Email Address</label>
@@ -78,7 +67,7 @@
 	}
    }
 
- 
+
  ?>
 </body>
 </html>
