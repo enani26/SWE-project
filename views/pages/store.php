@@ -2,7 +2,117 @@
 <title>
     Misery store
 </title>
+<head>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
 <style>
+
+:root {
+    --bg-color: white;
+    --text-color: #7f96b3;
+    --main-color: #c8815f;
+    --big-font: 4.5rem;
+    --h2-font: 3.3rem;
+    --h3-font: 2rem;
+    --normal-font: 1rem;
+}
+
+.search-container {
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+.search-container form {
+    display: inline-block;
+    position: relative;
+}
+
+.search-container input[type="text"] {
+    width: 500px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-container button[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color:black;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+}
+
+.search-container button[type="submit"]:hover {
+    background-color: #e0e0e0;
+}
+header {
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 14%; /* Removed extra space from padding */
+    transition: all .35s ease;
+}
+.logo {
+   
+    
+        padding: 20px;
+        margin: 40px;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: var(--tex);
+    
+}
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 10px 25px;
+    font-size: var(--normal-font);
+    transition: all .36s ease;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+}
+
+.header-icons i {
+    font-size: 32px;
+    color: #7f96b3;
+    margin-right: 20px;
+    transition: all .36s ease;
+}
+
+.header-icons:hover i {
+    color: var(--main-color);
+}
+header.sticky {
+    background: var(--bg-color);
+    padding: 20px 14%; /* Removed extra space from padding */
+    box-shadow: 0px 0px 10px rgb(0 0 0/100%);
+    height: 7%;
+}
+
     body {
         background-color:white;
     }
@@ -163,30 +273,30 @@
 <body>
 
 
-<nav class="navbar">
-    <a href="about.php" style="left: 560px; top: 12px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Montserrat; font-weight: 400; word-wrap: break-word" class="nav-item">CART</a>
-    <a href="store.php" style="left: 681px; top: 12px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Montserrat; font-weight: 400; word-wrap: break-word" class="nav-item">STORE</a>
-    <a href="contact.php" style="left: 819px; top: 12px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Montserrat; font-weight: 400; word-wrap: break-word" class="nav-item">WISHLIST</a>
-    <a href="index.php" style="left: 416px; top: 12px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Montserrat; font-weight: 400; word-wrap: break-word" class="nav-item">HOME</a>
-    <div class="nav-highlight"></div>
-    <div style="left: 50px; top: 5px; position: absolute; color: #7F96B3; font-size: 48px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word">MISERY</div>
-    <a href="register.php" style="left: 1154px; top: 12px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Montserrat; font-weight: 400; word-wrap: break-word" class="nav-item">JOIN-US</a>
-</nav>
-    
-    <div class="sortt">
-        <select>
-        <option value="T-shirt">T-shirt</option>
-        <option value="Hoodies">Hoodies</option>
-        <option value="Pants">Pants</option>
-        <option value="Shorts">Shorts</option>
-    </select>
+<header class="sticky">
+    <h3 class="logo">Misery</h3>
+    <ul class="navlist">
+        <li><a href="home.php">Home</a></li>
+        <li><a href="store.php">Shop</a></li>
+        <li><a href="Contact.php">Contact</a></li>
+        <li><a href="Register.php">Login</a></li>
+    </ul>
+    <div class="header-icons">
+        <a href="cart.php"><i class='bx bx-cart'></i></a>
     </div>
-   
+</header>
+    
 
-    <hr
-        style="width: 1440.09px; height: 0px; left: 0px; top: 181px; position: absolute; transform: rotate(-0.65deg); transform-origin: 0 0; border: 2px #7F96B3 solid">
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    
+    <div class="search-container">
+    <form action="">
+        <input type="text" placeholder="Search...">
+        <input type="submit" value="search" >
+    </form>
+</div>
+    <br><br><br><br>
 
 
 
