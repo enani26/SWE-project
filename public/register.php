@@ -88,7 +88,7 @@ session_start();
 
     //redirect the user back to index.php 
 	if($result)	{
-		header("Location:index.php");
+		header("Location:../../../index.php");
 	}
 }
 
