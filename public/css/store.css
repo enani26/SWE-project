@@ -111,106 +111,112 @@ header.sticky {
 }
 
 body {
-    background-color: white;
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
+.search-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
-.price {
-    color: grey;
-    font-size: 22px;
-}
-
-.card button {
-    border: #7F96B3;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
+input[type="text"] {
     width: 100%;
-    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    outline: none;
 }
 
-.card button:hover {
-    opacity: 0.7;
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
-* {
+input[type="submit"]:hover {
+    background-color: #332;
+}
+
+/************************************************************************************************************ */
+/* Define a default body margin and padding */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.big_container{
-    padding: 3.2rem 0;
-}
-.product_container{
-    width:88vw;
-    width: 100%;
-    margin: 0 auto;
-}
-/* Float four columns side by side */
-.column {
-    position: relative;
-    margin: 2rem;
-    padding: 0 10px;
+/* Define the product container */
+.small-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-/* Remove extra left and right margins, due to padding in columns */
-.row {
-    margin: 0 -5px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Style the counter cards */
-.card {
+/* Define the product item */
+.product-item {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    /* this adds the "card" effect */
-    padding: 16px;
+    transition: 0.3s;
+    width: 200px;
+    margin: 20px;
     text-align: center;
-    background-color: #f1f1f1;
 }
 
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
+/* Add a hover effect to the product item */
+.product-item:hover {
+    box-shadow: 0 8px 16px 0 cyan;
 }
 
-/* .sortt {
-    width: 1440.09px;
-    height: 0px;
-    left: 50px;
-    top: 200px;
-    position: absolute;
-    transform: rotate(-0.65deg);
-    transform-origin: 0 0;
-    border: 2px #1669ce solid;
+/* Define the product item image */
+.product-item img {
+    width: 100%;
+    height: auto;
+}
 
-} */
+/* Define the product item title */
+.product-item h1 {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 20px;
+}
 
-/* CSS styles for the footer */
+/* Define the product item price */
+.product-item .product-price {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 16px;
+}
+
+/* Define the add to cart button */
+.product-item .add-to-cart-btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    align-items: center;
+}
+
+/* Add a hover effect to the add to cart button */
+.product-item .add-to-cart-btn:hover {
+    background-color: #332;
+}
+
+/************************************************************************************************************** */
 footer {
     background-color: black;
     padding: 20px;
