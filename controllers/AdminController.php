@@ -1,6 +1,6 @@
 <?php
 
-class AdminController extends controller 
+class AdminController extends Controller 
 {
     public function ShowLoginForm(){
         //display the login form

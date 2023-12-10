@@ -11,7 +11,7 @@
             text-align: center;
             color: white;
             font-size: 20px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
         }
 
         .footer-logo {
