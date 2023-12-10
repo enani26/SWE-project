@@ -1,0 +1,285 @@
+:root {
+    --bg-color: white;
+    --text-color: #7f96b3;
+    --main-color: #c8815f;
+    --big-font: 4.5rem;
+    --h2-font: 3.3rem;
+    --h3-font: 2rem;
+    --normal-font: 1rem;
+}
+
+.search-container {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.search-container form {
+    display: inline-block;
+    position: relative;
+}
+
+.search-container input[type="text"] {
+    width: 500px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-container button[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: black;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+}
+
+.search-container button[type="submit"]:hover {
+    background-color: #e0e0e0;
+}
+
+header {
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 14%;
+    /* Removed extra space from padding */
+    transition: all .35s ease;
+}
+
+.logo {
+
+
+    padding: 20px;
+    margin: 40px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--tex);
+
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 10px 25px;
+    font-size: var(--normal-font);
+    transition: all .36s ease;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+}
+
+.header-icons i {
+    font-size: 32px;
+    color: #7f96b3;
+    margin-right: 20px;
+    transition: all .36s ease;
+}
+
+.header-icons:hover i {
+    color: var(--main-color);
+}
+
+header.sticky {
+    background: var(--bg-color);
+    padding: 20px 14%;
+    /* Removed extra space from padding */
+    box-shadow: 0px 0px 10px rgb(0 0 0/100%);
+    height: 7%;
+}
+
+body {
+    background-color: white;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: #7F96B3;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.big_container{
+    padding: 3.2rem 0;
+}
+.product_container{
+    width:88vw;
+    width: 100%;
+    margin: 0 auto;
+}
+/* Float four columns side by side */
+.column {
+    position: relative;
+    margin: 2rem;
+    padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+    margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* .sortt {
+    width: 1440.09px;
+    height: 0px;
+    left: 50px;
+    top: 200px;
+    position: absolute;
+    transform: rotate(-0.65deg);
+    transform-origin: 0 0;
+    border: 2px #1669ce solid;
+
+} */
+
+/* CSS styles for the footer */
+footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    margin-bottom: 20px;
+}
+
+.footer-address {
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-newsletter {
+    margin-bottom: 20px;
+}
+
+.footer-newsletter input[type="email"] {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.footer-newsletter button {
+    padding: 5px 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons i {
+    margin-right: 10px;
+    color: #555;
+}
+
+.footer-copyright {
+    color: #777;
+}

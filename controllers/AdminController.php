@@ -43,7 +43,7 @@ public function showDshboard(){
       session_start(); //log out the user by destroying the session
       session_destroy();
     //redirect the user to the login page
-    header('location:login.php')
+    header('location:login.php');
   }
 
 }

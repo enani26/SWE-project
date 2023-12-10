@@ -1,424 +1,376 @@
+<?php
+require_once('../../models/products.php');
+require_once('../../controllers/productController.php');
+$model = new products();
+$controller = new productController($model);
+
+$values = $model->getproducts();
+
+?>
+
 <html>
 <title>
     Misery store
 </title>
+
 <head>
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../z../public/css/store_style.css">
 </head>
+
 <style>
+    :root {
+        --bg-color: white;
+        --text-color: #7f96b3;
+        --main-color: #c8815f;
+        --big-font: 4.5rem;
+        --h2-font: 3.3rem;
+        --h3-font: 2rem;
+        --normal-font: 1rem;
+    }
 
-:root {
-    --bg-color: white;
-    --text-color: #7f96b3;
-    --main-color: #c8815f;
-    --big-font: 4.5rem;
-    --h2-font: 3.3rem;
-    --h3-font: 2rem;
-    --normal-font: 1rem;
-}
+    .search-container {
+        text-align: center;
+        margin-top: 50px;
 
-.search-container {
-    text-align: center;
-    margin-top: 50px;
-    
-}
+    }
 
-.search-container form {
-    display: inline-block;
-    position: relative;
-}
+    .search-container form {
+        display: inline-block;
+        position: relative;
+    }
 
-.search-container input[type="text"] {
-    width: 500px;
-    height: 50px;
-    padding: 0 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-}
+    .search-container input[type="text"] {
+        width: 500px;
+        height: 50px;
+        padding: 0 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+    }
 
-.search-container button[type="submit"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 50px;
-    width: 50px;
-    border: none;
-    background-color:black;
-    font-size: 20px;
-    color: #888;
-    cursor: pointer;
-    border-radius: 0 5px 5px 0;
-    outline: none;
-}
+    .search-container button[type="submit"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50px;
+        width: 50px;
+        border: none;
+        background-color: black;
+        font-size: 20px;
+        color: #888;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+        outline: none;
+    }
 
-.search-container button[type="submit"]:hover {
-    background-color: #e0e0e0;
-}
-header {
-    width: 100%;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: transparent;
-    padding: 20px 14%; /* Removed extra space from padding */
-    transition: all .35s ease;
-}
-.logo {
-   
-    
+    .search-container button[type="submit"]:hover {
+        background-color: #e0e0e0;
+    }
+
+    header {
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: transparent;
+        padding: 20px 14%;
+        /* Removed extra space from padding */
+        transition: all .35s ease;
+    }
+
+    .logo {
+
+
         padding: 20px;
         margin: 40px;
         font-size: 28px;
         font-weight: 700;
         letter-spacing: 1px;
         color: var(--tex);
-    
-}
-.navlist {
-    display: flex;
-}
 
-.navlist a {
-    color: var(--text-color);
-    font-weight: 600;
-    padding: 10px 25px;
-    font-size: var(--normal-font);
-    transition: all .36s ease;
-}
+    }
 
-.navlist a:hover {
-    color: var(--main-color);
-}
+    .navlist {
+        display: flex;
+    }
 
-.header-icons i {
-    font-size: 32px;
-    color: #7f96b3;
-    margin-right: 20px;
-    transition: all .36s ease;
-}
+    .navlist a {
+        color: var(--text-color);
+        font-weight: 600;
+        padding: 10px 25px;
+        font-size: var(--normal-font);
+        transition: all .36s ease;
+    }
 
-.header-icons:hover i {
-    color: var(--main-color);
-}
-header.sticky {
-    background: var(--bg-color);
-    padding: 20px 14%; /* Removed extra space from padding */
-    box-shadow: 0px 0px 10px rgb(0 0 0/100%);
-    height: 7%;
-}
+    .navlist a:hover {
+        color: var(--main-color);
+    }
+
+    .header-icons i {
+        font-size: 32px;
+        color: #7f96b3;
+        margin-right: 20px;
+        transition: all .36s ease;
+    }
+
+    .header-icons:hover i {
+        color: var(--main-color);
+    }
+
+    header.sticky {
+        background: var(--bg-color);
+        padding: 20px 14%;
+        /* Removed extra space from padding */
+        box-shadow: 0px 0px 10px rgb(0 0 0/100%);
+        height: 7%;
+    }
 
     body {
-        background-color:white;
+        background-color: #f5f5f5;
+        font-family: 'Arial', sans-serif;
     }
 
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 300px;
-        margin: auto;
-        text-align: center;
-        font-family: arial;
+    .search-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
     }
 
-    .price {
-        color: grey;
-        font-size: 22px;
-    }
-
-    .card button {
-        border: #7F96B3;
-        outline: 0;
-        padding: 12px;
-        color: white;
-        background-color: #000;
-        text-align: center;
-        cursor: pointer;
+    input[type="text"] {
         width: 100%;
-        font-size: 18px;
-    }
-
-    .card button:hover {
-        opacity: 0.7;
-    }
-
-    * {
+        padding: 10px;
+        margin: 10px 0;
         box-sizing: border-box;
+        border: 1px solid #ccc;
+        outline: none;
     }
 
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    /************************************************************************************************************ */
+    /* Define a default body margin and padding */
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
     }
 
-    /* Float four columns side by side */
-    .column {
-        float: left;
-        width: 25%;
-        padding: 0 10px;
+    /* Define the product container */
+    .small-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
     }
 
-    /* Remove extra left and right margins, due to padding in columns */
-    .row {
-        margin: 0 -5px;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    /* Style the counter cards */
-    .card {
+    /* Define the product item */
+    .product-item {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        /* this adds the "card" effect */
-        padding: 16px;
+        transition: 0.3s;
+        width: 200px;
+        margin: 20px;
         text-align: center;
-        background-color: #f1f1f1;
     }
 
-    /* Responsive columns - one column layout (vertical) on small screens */
-    @media screen and (max-width: 600px) {
-        .column {
-            width: 100%;
-            display: block;
-            margin-bottom: 20px;
-        }
+    /* Add a hover effect to the product item */
+    .product-item:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
-  .sortt{
-    width: 1440.09px; height: 0px; left: 50px; top: 200px; position: absolute; transform: rotate(-0.65deg); transform-origin: 0 0; border: 2px #7F96B3 solid">
 
-  }
-  
-    /* CSS styles for the footer */
+    /* Define the product item image */
+    .product-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Define the product item title */
+    .product-item h1 {
+        margin: 0;
+        padding: 20px 0;
+        font-size: 20px;
+    }
+
+    /* Define the product item price */
+    .product-item .product-price {
+        margin: 0;
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    /* Define the add to cart button */
+    .product-item .add-to-cart-btn {
+        display: inline-block;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    /* Add a hover effect to the add to cart button */
+    .product-item .add-to-cart-btn:hover {
+        background-color: #666;
+    }
+
+    /************************************************************************************************************** */
     footer {
-            background-color: black;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-size: 20px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
+        background-color: black;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
 
-        .footer-logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-        }
+    .footer-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
 
-        .footer-description {
-            margin-bottom: 20px;
-        }
+    .footer-description {
+        margin-bottom: 20px;
+    }
 
-        .footer-address {
-            margin-bottom: 10px;
-        }
+    .footer-address {
+        margin-bottom: 10px;
+    }
 
-        .footer-contact {
-            margin-bottom: 10px;
-        }
+    .footer-contact {
+        margin-bottom: 10px;
+    }
 
-        .footer-links {
-            margin-bottom: 20px;
-            list-style-type: none;
-            padding: 0;
-            text-decoration: none;
-            color: white;
-        }
+    .footer-links {
+        margin-bottom: 20px;
+        list-style-type: none;
+        padding: 0;
+        text-decoration: none;
+        color: white;
+    }
 
-        .footer-links li {
-            display: inline-block;
-            margin-right: 10px;
-            text-decoration: none;
-            color: white;
-        }
+    .footer-links li {
+        display: inline-block;
+        margin-right: 10px;
+        text-decoration: none;
+        color: white;
+    }
 
-        .footer-newsletter {
-            margin-bottom: 20px;
-        }
+    .footer-newsletter {
+        margin-bottom: 20px;
+    }
 
-        .footer-newsletter input[type="email"] {
-            width: 200px;
-            padding: 5px;
-            border: 1px solid #ccc;
-        }
+    .footer-newsletter input[type="email"] {
+        width: 200px;
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
 
-        .footer-newsletter button {
-            padding: 5px 10px;
-            background-color: #555;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
+    .footer-newsletter button {
+        padding: 5px 10px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
 
-        .social-icons {
-            margin-bottom: 20px;
-        }
+    .social-icons {
+        margin-bottom: 20px;
+    }
 
-        .social-icons i {
-            margin-right: 10px;
-            color: #555;
-        }
+    .social-icons i {
+        margin-right: 10px;
+        color: #555;
+    }
 
-        .footer-copyright {
-            color: #777;
-        }
+    .footer-copyright {
+        color: #777;
+    }
 </style>
 
 <body>
 
 
-<header class="sticky">
-    <h3 class="logo">Misery</h3>
-    <ul class="navlist">
-        <li><a href="home.php">Home</a></li>
-        <li><a href="store.php">Shop</a></li>
-        <li><a href="Contact.php">Contact</a></li>
-        <li><a href="Register.php">Login</a></li>
-    </ul>
-    <div class="header-icons">
-        <a href="cart.php"><i class='bx bx-cart'></i></a>
-    </div>
-</header>
-    
+    <header class="sticky">
+        <h3 class="logo">Misery</h3>
+        <ul class="navlist">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="store.php">Shop</a></li>
+            <li><a href="Contact.php">Contact</a></li>
+            <li><a href="Register.php">Login</a></li>
+        </ul>
+        <div class="header-icons">
+            <a href="cart.php"><i class='bx bx-cart'></i></a>
+        </div>
+    </header>
+
 
 
     <br><br><br><br><br><br><br>
-    
+
     <div class="search-container">
-    <form action="">
-        <input type="text" placeholder="Search...">
-        <input type="submit" value="search" >
-    </form>
-</div>
-    <br><br><br><br>
-
-
-
-    <div class="Unisex"
-        style="left: 1307px; top: 127px; position: absolute; color: #7F96B3; font-size: 30px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word">
-        UNISEX<br /></div>
-
-
-    <div class="row">
-        <div class="column"><form action="">
-            <div class="card" > <img src="img/skull.jpg" alt="Skull T-shirt" style="width: 73%">
-                <h1>Skull T-Shirt</h1>
-                <p class="price">$19.99</p>
-                <p>oversized T-shirt</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/black.jpg" alt="black Hoodies" style="width:50%" >
-                <h1>black Hoodies</h1>
-                <p class="price">$19.99</p>
-                <p>black hoodies    </p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/web.jpg" alt="navy blue hoodies" style="width:60%">
-                <h1>navy blue Hoodies</h1>
-                <p class="price">$19.99</p>
-                <p>navy blue hoodies</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/generic.jpg" alt="Generic hoodies" style="width:70%">
-                <h1>generic hoodies</h1>
-                <p class="price">$19.99</p>
-                <p>generic hoodies</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
+        <form action="">
+            <input type="text" placeholder="Search...">
+            <input type="submit" value="search" name="search_data">
+        </form>
     </div>
     <br><br><br><br>
-    <div class="row">
-        <div class="column">
-            <div class="card"> <img src="img/greyy.jpg" alt="grey hoodies" style="width:70%">
-                <h1>grey hoodies</h1>
-                <p class="price">$19.99</p>
-                <p>grey hoodies</p>
-                <p><button>Add to Cart</button></p>
+
+    <div class="small-container">
+        <?php foreach ($values as $val): ?>
+            <div class="product-item" width="200px">
+                <!-- Add your image here -->
+
+                <img src="../pages/img/<?= ($val->getproduct_img()) ?>" width="100px" height="200px">
+                <h1>
+                    <?= htmlspecialchars($val->getproduct_name()) ?>
+                </h1>
+                <p class="product-price">
+                    <?= htmlspecialchars($val->getproduct_description()) ?>
+                    <br><br>
+                    <?= htmlspecialchars($val->getproduct_price()) ?>
+                </p>
+                <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/white.jpg" alt="white hoodies" style="width:70%">
-                <h1>White hoodiess</h1>
-                <p class="price">$19.99</p>
-                <p>White hoodies</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/white tshirt.jpg" alt="white t-shirt" style="width:65%">
-                <h1>white t-shirt</h1>
-                <p class="price">$19.99</p>
-                <p>white t-shirt</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/green t-shirt.jpg" alt="green t-shirt" style="width:55%">
-                <h1>green t-shirt</h1>
-                <p class="price">$19.99</p>
-                <p>green t-shirt</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
+
+        <?php endforeach ?>
     </div>
-    <br><br><br><br>
-    <div class="row">
-        <div class="column">
-            <div class="card"> <img src="img/denims jeans.jpg" alt="Denim Jeans" style="width:70%">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Denims jeans</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/baggy.jpg" alt="baggy Jeans" style="width:55%">
-                <h1>Baggy Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Baggy Jeans</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/cargo.jpg" alt="cargo pants" style="width:55%">
-                <h1>cargo pants</h1>
-                <p class="price">$19.99</p>
-                <p>cargo pants</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card"> <img src="img/shorts.jpg" alt="cargo short" style="width:85%">
-                <h1>cargo short</h1>
-                <p class="price">$19.99</p>
-                <p>cargo short</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-    </div>
-    
+
+
+
     <footer>
         <div class="row">
             <div class="col">
                 <!-- <img src="logo.png" class="footer-logo"> -->
                 <p class="footer-description">
-                    Fashion refers to anything that becomes a rage among the masses. 
-                    Fashion is a popular aesthetic expression. 
-                    Most notably, it is something that is in vogue. 
-                    Fashion appears in clothing, footwear, accessories, makeup, hairstyles, lifestyle, and body proportions.
+                    Fashion refers to anything that becomes a rage among the masses.
+                    Fashion is a popular aesthetic expression.
+                    Most notably, it is something that is in vogue.
+                    Fashion appears in clothing, footwear, accessories, makeup, hairstyles, lifestyle, and body
+                    proportions.
                 </p>
             </div>
             <div>
