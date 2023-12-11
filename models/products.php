@@ -44,9 +44,13 @@ class products extends Model
 
     function insert_product($product_name, $product_description, $product_keyword, $product_img, $product_price, $status)
     {
-
         $sql = "INSERT INTO store_products (product_name, product_description, product_keyword, product_img,product_price,status) VALUES ('$product_name', '$product_description', '$product_keyword', '$product_img','$product_price','$status')";
-        if ($this->db->query($sql) === true) {
+
+        if (!is_numeric($product_price) || $product_price <= 0) {
+            // return an error message if the price is invalid
+            echo "Invalid price! Please enter a positive number.";
+
+        } else if ($this->db->query($sql) === true) {
             echo "Records inserted successfully.";
             $this->FillArray();
         } else {
@@ -56,9 +60,7 @@ class products extends Model
     }
 
 
+
+
 }
-
-
-
-
 ?>

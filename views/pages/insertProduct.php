@@ -22,51 +22,11 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device=width,initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/insertproduct.css">
+
     <title> Insert Products-Admin Dashboard </title>
 </head>
-<style>
-    body {
-        background-color: #f5f5f5;
-        font-family: 'Arial', sans-serif;
-    }
 
-    h1 {
-        color: #333;
-        text-align: center;
-    }
-
-    form {
-        width: 50%;
-        margin: 0 auto;
-        padding: 20px;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-    }
-
-    input[type="text"],
-    input[type="file"] {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        outline: none;
-    }
-
-    input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        background-color: #4CAF50;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-        background-color: #45a049;
-    }
-</style>
 
 <body class="bg-light">
     <div class="container mt-3">

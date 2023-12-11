@@ -2,24 +2,6 @@
 require_once('model.php');
 class product extends Model{
     
-    // $searchErr = '';
-    // $product_details='';
-
-    // if(isset($_POST['save'])){
-    //     if(!empty($_POST['search']))
-    //     {
-    //         $search=$_POST['search'];
-    //         $stmt=$conn->prepare("select * from store_products where department like '%$search%' or name like '%$search%'");
-    //         $stmt->execute();
-    //         $employee_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-    //     }
-    //     else{
-    //         $searchErr = "Please enter the information";
-    //     }
-    // }
-
 private $product_id;
 private $product_name;
 private $product_description;

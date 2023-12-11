@@ -15,7 +15,7 @@ $values = $model->getproducts();
 
 <head>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../../public/css/store.css">
+     <link rel="stylesheet" href="../../public/css/store.css"> 
 </head>
 
 
@@ -33,8 +33,7 @@ $values = $model->getproducts();
     </header>
 
 
-    <br><br><br><br><br><br><br>
-
+<br>
     <div class="search-container">
         <form action="">
             <input type="text" placeholder="Search...">
@@ -57,6 +56,7 @@ $values = $model->getproducts();
                     <br><br>
                     <?= htmlspecialchars($val->getproduct_price()) ?>
                 </p>
+                
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
@@ -89,10 +89,10 @@ $values = $model->getproducts();
 <div style="flex: 1 50%;" class="footer-col">
     <h4 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">online shopping</h4>
     <ul style="list-style: none; padding-left: 0;">
-        <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Jacket</a></li>
-        <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Hoodies</a></li>
-        <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Pants</a></li>
-        <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Shorts</a></li>
+        <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Jacket</a></li>
+        <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Hoodies</a></li>
+        <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Pants</a></li>
+        <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Shorts</a></li>
     </ul>
 </div>
 
