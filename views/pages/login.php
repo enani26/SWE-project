@@ -44,14 +44,15 @@
 
     <?php
    session_start();
-   include_once "../../includes/Dbh.php";
+   include_once "../../includes/dbh.inc.php";
    //grab data from user and see if it exists in database
    if($_SERVER["REQUEST_METHOD"]=="POST"){
-
+$db=new DBh();
     $email=$_POST["email"];
 	$password=$_POST["password"];
-	$sql="Select * from signup where email ='$email' and password='$password'";
-	$result = mysqli_query($conn,$sql);
+	$sql="Select * from user where email ='$email' and password='$password'";
+    $result = $db->query($sql);
+
     if($row=mysqli_fetch_array($result))	{
 		$_SESSION["ID"]=$row[0];
 		$_SESSION["firstname"]=$row["firstname"];
@@ -59,11 +60,12 @@
 		$_SESSION["email"]=$row["email"];
 		$_SESSION["password"]=$row["password"];
 		$_SESSION["phone"]=$row["phone"];
+        $_SESSION["UserType"]=$row["UserType"];
         //redirect after a succeful login
-		header("Location:../../../index.php");
+		header("Location:userprofile.php");
 	}
 	else	{
-		echo "Inalid Email or Password";
+		echo "Invalid Email or Password";
 	}
    }
 

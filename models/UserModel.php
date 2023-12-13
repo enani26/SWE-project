@@ -1,9 +1,9 @@
 <?php
-  require_once(__ROOT__ . "model/Model.php");
+  require_once(__ROOT__ . "models/model.php");
 ?>
 
 <?php
-class User extends Model {
+class client extends Model {
     private $id;
     private $name;
 	private $password;

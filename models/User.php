@@ -1,4 +1,5 @@
 <?php
+  require_once(__ROOT__ . "models/model.php");
 
 class User extends model{
   private $id;
