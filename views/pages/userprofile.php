@@ -1,5 +1,13 @@
-
-
+<?php
+define('__ROOT__', "../../");
+require_once(__ROOT__ . "models/User.php");
+require_once(__ROOT__ . "controllers/UserController.php");
+// require_once(__ROOT__ . "view/ViewUser.php");
+session_start();
+$model = new User($_SESSION["ID"]);
+$controller = new UserController($model);
+// $view = new ViewUser($controller, $model);
+?>
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +89,7 @@
                         </a>
                         <div class="dropdown-menu  dropdown-menu-right ">
                             <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome, Mazen </h6>
+                                <h6 class="text-overflow m-0">Welcome, <?= $model->getFirstName()?> </h6>
                             </div>
                             <a href="/userprofile" class="dropdown-item">
                                 

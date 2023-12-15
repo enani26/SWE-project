@@ -45,25 +45,28 @@
     <?php
    session_start();
    include_once "../../includes/dbh.inc.php";
-   //grab data from user and see if it exists in the database
-   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $sql = "SELECT * FROM signup WHERE email ='$email' AND password='$password'";
-        $result = mysqli_query($conn, $sql);
+   //grab data from user and see if it exists in database
+   if($_SERVER["REQUEST_METHOD"]=="POST"){
+$db=new DBh();
+    $email=$_POST["email"];
+	$password=$_POST["password"];
+	$sql="Select * from user where email ='$email' and password='$password'";
+    $result = $db->query($sql);
 
-        if ($row = mysqli_fetch_array($result)) {
-            $_SESSION["ID"] = $row[0];
-            $_SESSION["firstname"] = $row["firstname"];
-            $_SESSION["lastname"] = $row["lastname"];
-            $_SESSION["email"] = $row["email"];
-            $_SESSION["password"] = $row["password"];
-            $_SESSION["phone"] = $row["phone"];
-            //redirect after a successful login
-            header("Location:../../../index.php");
-        } else {
-            echo "Invalid Email or Password";
-        }
+    if($row=mysqli_fetch_array($result))	{
+		$_SESSION["ID"]=$row[0];
+		$_SESSION["firstname"]=$row["firstname"];
+		$_SESSION["lastname"]=$row["lastname"];
+		$_SESSION["email"]=$row["email"];
+		$_SESSION["password"]=$row["password"];
+		$_SESSION["phone"]=$row["phone"];
+        $_SESSION["UserType"]=$row["UserType"];
+        //redirect after a succeful login
+		header("Location:userprofile.php");
+	}
+	else	{
+		echo "Invalid Email or Password";
+	}
    }
 ?>
 

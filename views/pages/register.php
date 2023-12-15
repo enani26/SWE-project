@@ -82,8 +82,9 @@ session_start();
 	/*$confirmpassword=htmlspecialchars($_POST["confirmpassword"]);*/
     $phone=htmlspecialchars($_POST["phone"]);
     //insert it to database 
-	$sql="insert into signup(firstname,lastname,email,password,phone) 
-	values('$firstname','$lastname','$email','$password','$phone')";
+    $usertype=htmlspecialchars($_POST["UserType"]);
+	$sql="insert into user(firstname,lastname,email,password,phone,UserType) 
+	values('$firstname','$lastname','$email','$password','$phone','$usertype)";
 	$result=mysqli_query($conn,$sql);
 
     //redirect the user back to index.php 

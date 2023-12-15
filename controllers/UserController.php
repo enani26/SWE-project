@@ -1,5 +1,6 @@
 <?php
-include_once "models/UserModel.php";
+// include_once "models/UserModel.php";
+require_once(__ROOT__ . "controllers/controller.php");
 
  class UserController extends Controller
  {
@@ -8,7 +9,7 @@ include_once "models/UserModel.php";
 		$password = $_REQUEST['password'];
 		$age = $_REQUEST['age'];
 		$phone = $_REQUEST['phone'];
-
+///////
 		$this->model->insertUser($name,$password,$age,$phone);
 	}
 
@@ -17,7 +18,7 @@ include_once "models/UserModel.php";
 		$password = $_REQUEST['password'];
 		$age = $_REQUEST['age'];
 		$phone = $_REQUEST['phone'];
-
+////////////////////
 		$this->model->editUser($name,$password,$age,$phone);
 	}
 	
