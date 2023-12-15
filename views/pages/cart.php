@@ -73,7 +73,6 @@
 					</div>
 					<div class='about'>
 						<h1 class='title'>{$product->getProductName()}</h1>
-						<h3 class='subtitle'>Size: {$product->getSize()}</h3>
 					</div>
 					<div class='counter'>
 						<div class='btn'>+</div>
