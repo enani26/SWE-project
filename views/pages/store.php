@@ -57,7 +57,7 @@ $values = $model->getproducts();
                     <?= htmlspecialchars($val->getproduct_price()) ?>
                 </p>
                 
-                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="add-to-cart-btn" method="post" action ="add_to_cart.php" >Add to Cart</button>
             </div>
 
         <?php endforeach ?>
