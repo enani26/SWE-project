@@ -68,8 +68,7 @@ $db=new DBh();
 		echo "Invalid Email or Password";
 	}
    }
+?>
 
-
- ?>
 </body>
 </html>
