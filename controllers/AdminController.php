@@ -10,7 +10,7 @@ class AdminController extends Controller
 		$password = $_REQUEST['password'];
 		$phone = $_REQUEST['phone'];
         $UserType=$_REQUEST['UserType'];
-		$this->model->insertAdmin($name,$password,$age,$phone);
+		$this->model->insertAdmin($firstname,$lastname,$email,$password,$phone,$UserType);
 	}
     public function EditAdmin(){
             $firstname = $_REQUEST['firstname'];
