@@ -15,7 +15,6 @@
         <?php
         session_start();
         require_once('../../models/product.php'); 
-        require_once "../../includes/dbh.inc.php";
         function fetchProductDetails($product_id) {
             global $conn;
             $sql = "SELECT * FROM store_products WHERE product_id = $product_id";
@@ -92,7 +91,7 @@
             echo "<p>Your cart is empty.</p>";
         }
 
-        mysqli_close($conn);
+     //   mysqli_close($conn);
         ?>
 
         <hr>
