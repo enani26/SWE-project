@@ -5,62 +5,66 @@
 <?php
 class client extends Model {
     private $id;
-    private $name;
-	private $password;
-    private $age;
+    private $firstname;
+    private $lastname:
+	  private $email;
+    private $password;
     private $phone;
+    private $UserType
 
-  function __construct($id,$name="",$password="",$age="",$phone="") {
+  function __construct($id,$firstname="",$lastname="",$email="",$password="",$phone="",$UserType="") {
     $this->id = $id;
 	    $this->db = $this->connect();
 
-    if(""===$name){
+    if(""===$firstname){
       $this->readUser($id);
     }else{
-      $this->name = $name;
-	  $this->password=$password;
-      $this->age = $age;
+      $this->firstname =$firstname;
+      $this->lastname=$lastname;
+      $this->email=$email;
+      $this->password=$password;
       $this->phone = $phone;
+      $this->UserType=$UserType;
     }
   }
 
   function getName() {
-    return $this->name;
+    return $this->firstname;
   }
-  function setName($name) {
-    return $this->name = $name;
+  function setName($firstname) {
+    return $this->firstname = $firstname;
   }
-  
+  function getlastName() {
+    return $this->lastname;
+  }
+  function setlastName($firstname) {
+    return $this->lastname = $lastname;
+  }
+  function getemail(){
+    return $this->email;
+  }
+  function getemail(){
+    return $this->email=$email;
+  }
    function getPassword() {
     return $this->password;
   }
   function setPassword($password) {
     return $this->password = $password;
   }
-  
-  function getAge() {
-    return $this->age;
-  }
-  function setAge($age) {
-    return $this->age = $age;
-  }
-  
   function getPhone() {
     return $this->phone;
   }
   function setPhone($phone) {
     return $this->phone = $phone;
   }
+  function getUserType(){
+    return $this->UserTpe;
+  }
 
   function getID() {
     return $this->id;
   }
-// Validate user input
-//public function validateInput() {
-  // Perform validation checks on username, email, etc.
-  // Return true if the data is valid; otherwise, return false.
-//}
-//login
 function readUser($id){
     $sql = "SELECT * FROM signup where ID=".$id;
     $db = $this->connect();

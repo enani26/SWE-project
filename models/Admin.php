@@ -37,4 +37,22 @@ class Admin extends User{
 			echo "ERROR: Could not able to execute $sql. " . $conn->error;
 		}
 	}
+	public function editAdmin() {
+		$firstname = $_REQUEST['firstname'];
+		$lastname=$_REQUEST['lastname'];
+		$email=$_REQUEST['email'];
+		$password = $_REQUEST['password'];
+		$phone = $_REQUEST['phone'];
+		$UserType=$_REQUEST['UserType'];
+		$this->model->editAdmin($firstname,$lastname,$email,$password,$phone,$UserType);
+	}
+	public function deletAdmin(){
+			$sql="delete from user where id=$this->id;";
+			if($this->db->query($sql) === true){
+				  echo "deletet successfully.";
+			  } else{
+				  echo "ERROR: Could not able to execute $sql. " . $conn->error;
+		  }
+	}
+	
 }
