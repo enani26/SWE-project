@@ -1,3 +1,4 @@
+things i will use for the connection
 <?php
     define('DB_SERVER', "localhost");
     define('DB_USER', "root");
