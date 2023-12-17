@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="../public/css/admindashboard.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/admindashboard.css">
 </head>
 <body>
     <header>
