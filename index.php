@@ -4,51 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="../../public/css/homee.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+<body >
+<?= include '../partials/navbar.php' ?>
+<header style="position: absolute; top: 0; left: 0; width: 100%; padding: 10px 20px; background: white; display: flex; justify-content: space-between; align-items: center; z-index: 100;">
+        <a href="#" style="font-size: 24px; color: black; text-decoration: dotted; font-weight: 700;">Misery</a>
+        <nav>
+            <a href="home.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Home</a>
+            <a href="Shop.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Shop</a>
+            <a href="Contact.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Contact</a>
+            <a href="cart.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 25px; margin-left: 20px; transition: color 0.3s;"><i class='bx bx-cart'></i></a>
+            <a href="Register1.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Sign-in</a>
+        </nav>
+    </header>
 
-<body>
+<section class="home" id="home">
+    <div class="home-text">
+        <h1>New <br><span>Arrivals</span></h1>
+        <p>Check our new Collection</p>
+        <a href="shop.php" class="btn">View Collection</a>
+    </div>
+</section>
 
+<section class="featured" id="featured">
+    <div class="center-text">
+        <h2>Featured Categories</h2>
+    </div>
+    <div class="featured-content">
+        <div class="row">
+            <img src="./img/pic20.jpg">
+            <div class="fea-text">
+                <h5>Men</h5>
+                <p>5 items</p>
+            </div>
+            <div class="arrow">
+                <a href=""><box-icon name='right-arrow-alt'></box-icon> </a>
+            </div>
+        </div>
 
-<div style="width: 100%; height: 4015px; left: 0px; top: 0px; position: absolute; background:#252124"></div>
-<div style="width: 1383px; height: 62px; left: 28px; top: 36px; position: absolute">
-<?php include 'navbar.php';?>
+        <div class="row">
+            <img src="./img/pic23.jpg">
+            <div class="fea-text">
+                <h5>Men</h5>
+                <p>5 items</p>
+            </div>
+            <div class="arrow">
+                <a href=""><box-icon name='right-arrow-alt'></box-icon> </a>
+            </div>
+        </div>
 
-<img style="width: 675px; height: 872px; left: 709px; top: 180px; position: absolute; border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 270px" src="./img/pic2.jpg"/>
-<div style="width: 720px; height: 516px; left: 155px; top: 254px; position: absolute">
-<div style="left: 0px; top: 0px; position: absolute; color: #7F96B3; font-size: 65px; font-family: Montserrat; font-weight: 400; word-wrap: break-word">EMBRACE THE<br/> DARKNESS<br/> inside you</div>
-<div style="width: 479px; height: 101px; left: 0px; top: 258px; position: absolute; color: #7F96B3; font-size: 18px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word">Misery is more than just a clothing brand; it's an expression of individuality. Our designs capture the essence of local culture and creativity, providing you with a unique style that stands out in the crowd.</div>
+        <div class="row">
+            <img src="./img/pic18.jpg">
+            <div class="fea-text">
+                <h5>Men</h5>
+                <p>5 items</p>
+            </div>
+            <div class="arrow">
+                <a href=""><box-icon name='right-arrow-alt'></box-icon> </a>
+            </div>
+        </div>
 
-<div style="width: 194px; height: 74px; left: 137px; top: 422px; position: absolute; background: #020202"></div>
-</div>
-<a href="store.php">
-    <button style="width: 205px; left: 290px; top: 701px; position: absolute; color: #7F96B3; font-size: 18px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word; background: transparent; border: none; cursor: pointer;">SHOP NOW</button>
-</a>
+        <div class="row">
+            <img src="./img/pic19.jpg">
+            <div class="fea-text">
+                <h5>Men</h5>
+                <p>5 items</p>
+            </div>
+            <div class="arrow">
+                <a href=""><box-icon name='right-arrow-alt'></box-icon> </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div style="left: 464px; top: 1091px; position: absolute; color: #7F96B3; font-size: 65px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word">new collection</div>
-<div style="width: 423px; left: 741px; top: 1738px; position: absolute; color: #7F96B3; font-size: 50px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word">Best fashion since 2021</div>
-<div style="width: 691px; left: 367px; top: 1174px; position: absolute; color: #7F96B3; font-size: 24px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word">Unveiling the Essence of Misery's Latest Collection</div>
-<img style="width: 288px; height: 262px; left: 251px; top: 1252px; position: absolute" src="./img/pic4.jpg" />
-<img style="width: 288px; height: 264px; left: 944px; top: 1252px; position: absolute" src="./img/pic 5.jpg" />
-<div style="width: 288px; height: 57px; left: 251px; top: 1514px; position: absolute; background: #D9D9D9"></div>
-<div style="width: 288px; height: 57px; left: 944px; top: 1514px; position: absolute; background: #D9D9D9"></div>
-<div style="left: 278px; top: 1528px; position: absolute; color: black; font-size: 24px; font-family: Montserrat; font-weight: 400; word-wrap: break-word">Misery camo shorts</div>
-<div style="left: 977px; top: 1528px; position: absolute; color: black; font-size: 24px; font-family: Montserrat; font-weight: 400; word-wrap: break-word">Misery Jeans shorts</div>
-<img style="width: 480px; height: 750px; left: 155px; top: 1738px; position: absolute; border-radius: 156px" src="./img/pic1.jpg" />
-<div style="width: 532px; left: 741px; top: 1886px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Montagu Slab; font-weight: 400; word-wrap: break-word">Misery's fashion isn't just about looking good; it's about feeling confident and expressing your unique self. Our collections empower you to embrace your individuality and stand out in a crowd.</div>
-<div style="width: 1440px; height: 930px; left: 0px; top: 2712px; position: absolute; background: #252124"></div>
-<div style="left: 155px; top: 2788px; position: absolute; color: #7F96B3; font-size: 64px; font-family: Montagu Slab; font-weight: 700; word-wrap: break-word">Best Seller <br/>Product</div>
-<img style="width: 500px; height: 481px; left: 690px; top: 2788px; position: absolute" src="./img/pic 6.jpg" />
-<div style="width: 503px; height: 192px; left: 690px; top: 3269px; position: absolute; background: #504C4C"></div>
-<div style="left: 721px; top: 3375px; position: absolute">
-<span style="color: white; font-size: 18px; font-family: Moul; font-weight: 400; text-decoration: line-through; word-wrap: break-word">950 le</span><span style="color: white; font-size: 18px; font-family: Moul; font-weight: 400; word-wrap: break-word"> 800 le</span></div>
+<section class="cta">
+    <div class="cta-text">
+        <h6>Winter Sale</h6>
+        <h4>30% OFF <br>NEW ARRIVAL</h4>
+        <a href="shop.php" class="btn">Shop Now</a>
+    </div>
+</section>
 
-<div style="left: 721px; top: 3332px; position: absolute; color: white; font-size: 18px; font-family: Moul; font-weight: 400; word-wrap: break-word">Misery Jeans</div>
-<div style="width: 398px; height: 185px; left: 155px; top: 2969px; position: absolute; color: #7F96B3; font-size: 20px; font-family: Moul; font-weight: 400; word-wrap: break-word">Misery jeans are synonymous with style that stands the test of time. From classic cuts to contemporary designs, there's a pair for every fashion preference.</div>
-</div>
+<section class="new" id="new">
+    <div class="center-text">
+        <h2>NEW ARRIVALS</h2>
+    </div>
+    <div class="new-content">
+        <div class="box">
+            <img src="./img/pic28.jpg">
+            <h5>Jacket</h5>
+            <h6>180$</h6>
+            <div class="sale">
+                <h4>Sale</h4>
+            </div>
+        </div>
 
+        <div class="box">
+            <img src="./img/pic31.jpg">
+            <h5>Hoodie</h5>
+            <h6>180$</h6>
+            <div class="sale">
+                <h4>Sale</h4>
+            </div>
+        </div>
 
+        <div class="box">
+            <img src="./img/pic29.jpg">
+            <h5>Shorts</h5>
+            <h6>100$</h6>
+            <div class="sale">
+                <h4>Sale</h4>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="./img/pic30.jpg">
+            <h5>Pants</h5>
+            <h6>280$</h6>
+            <div class="sale">
+                <h4>Sale</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer style="display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; flex-flow: row wrap; padding: 50px; color: #fff; background-color: #25242a;">
+
+    <div style="flex: 1 100%;" class="left-area">
+        <h2 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">Store</h2>
+        <ul style="list-style: none; padding-left: 0;">
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">about us</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">our services</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">privacy policy</a></li>
+        </ul>
+    </div>
+
+    <div style="flex: 1 50%;" class="footer-col">
+        <h4 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">get help</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">FAQ</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Shipping</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Returns</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Payment Options</a></li>
+        </ul>
+    </div>
+
+    <div style="flex: 1 50%;" class="footer-col">
+        <h4 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">online shopping</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Jacket</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Hoodies</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Pants</a></li>
+            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Shorts</a></li>
+        </ul>
+    </div>
+
+    <div style="flex: 1 50%;" class="footer-col">
+        <h4 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">Follow us</h4>
+        <div class="social-links" style="margin-top: 2.2em;">
+            <a href="#" style="background: cyan; width: 40px; height: 40px; display: inline-block; margin-right: 10px;">
+                <i style="color: #e7f2f4; padding: 10px 12px; font-size: 20px;" class='bx bxl-instagram'></i>
+            </a>
+            <a href="#" style="background: cyan; width: 40px; height: 40px; display: inline-block; margin-right: 10px;">
+                <i style="color: #e7f2f4; padding: 10px 12px; font-size: 20px;" class='bx bxl-facebook'></i>
+            </a>
+            <a href="#" style="background: cyan; width: 40px; height: 40px; display: inline-block; margin-right: 10px;">
+                <i style="color: #e7f2f4; padding: 10px 12px; font-size: 20px;" class='bx bxl-twitter'></i>
+            </a>
+        </div>
+    </div>
+
+</footer>
 
 </body>
 </html>
-
-
