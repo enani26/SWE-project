@@ -12,7 +12,7 @@ class AdminController extends Controller
         $UserType=$_REQUEST['UserType'];
 		$this->model->insertAdmin($firstname,$lastname,$email,$password,$phone,$UserType);
 	}
-    
+
     public function EditAdmin(){
             $firstname = $_REQUEST['firstname'];
             $lastname=$_REUEST['lastname'];
@@ -27,6 +27,6 @@ class AdminController extends Controller
         }
 
     }
-
+?>
 
 
