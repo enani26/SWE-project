@@ -1,4 +1,4 @@
-<?php
+
 <html>
 <head>
     <title>Shopping Cart</title>
