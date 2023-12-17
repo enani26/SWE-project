@@ -1,29 +1,32 @@
+<!-- admin_dashboard.php -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" type="text/css" href="../public/css/admindashboard.css">
 </head>
 <body>
-    <div class="dashboard">
-        <h1>Admin Dashboard</h1>
+    <header>
+        <h1>Welcome, Admin!</h1>
+        <a href="logout.php">Logout</a>
+    </header>
 
-        <section class="highlight-section">
-            <h2>Best Sellers</h2>
-            <?php include 'best_sellers.php'; ?>
-        </section>
+    <div class="container">
+        <h2>Admin Dashboard</h2>
+        <p>Here, you can perform administrative tasks.</p>
 
-        <section class="view-products-section">
-            <h2>View Products</h2>
-            <?php include 'view_products.php'; ?>
-        </section>
+        <div class="dashboard-card">
+            <h3>Total Users</h3>
+            <p><?php echo $totalUsers; ?></p>
+        </div>
 
-        <section class="sold-out-section">
-            <h2>Sold-Out Items</h2>
-            <?php include 'sold_out_items.php'; ?>
-        </section>
+        <div class="dashboard-card">
+            <h3>Total Sales</h3>
+            <p><?php echo $totalSales; ?></p>
+        </div>
+
+        <!-- Add more dashboard cards for other metrics or tasks -->
     </div>
 </body>
 </html>

@@ -1,48 +1,40 @@
+/* admin_dashboard.css */
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.dashboard {
-    width: 80%;
-    margin: 20px auto;
+header {
+    background-color: #333;
+    color: #fff;
     padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #ced4da;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
 }
 
-h1 {
-    color: #333;
-    text-align: center;
+.container {
+    padding: 20px;
 }
 
-h2 {
+h1, h2, h3 {
     color: #333;
 }
 
-section {
+.dashboard-card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
     margin-bottom: 20px;
 }
 
-/* Styles for Best Sellers Section */
-.highlight-section {
-    background-color: #e6f7ff;
-    padding: 15px;
+.dashboard-card h3 {
+    margin-top: 0;
 }
 
-/* Styles for View Products Section */
-.view-products-section {
-    background-color: #f3f3f3;
-    padding: 15px;
+.dashboard-card p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
 }
-
-/* Styles for Sold-Out Items Section */
-.sold-out-section {
-    background-color: #ffe6e6;
-    padding: 15px;
-}
-
-/* Add more specific styles as needed */
