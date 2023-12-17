@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Shopping Cart</title>
-    <link rel="stylesheet" type="text/css" href="../../cart.css">
+    <link rel="stylesheet" type="text/css" href=".././cart.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
 </head>
 <body>
