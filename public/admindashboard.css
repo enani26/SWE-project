@@ -1,2 +1,48 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    
+.dashboard {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Styles for Best Sellers Section */
+.highlight-section {
+    background-color: #e6f7ff;
+    padding: 15px;
+}
+
+/* Styles for View Products Section */
+.view-products-section {
+    background-color: #f3f3f3;
+    padding: 15px;
+}
+
+/* Styles for Sold-Out Items Section */
+.sold-out-section {
+    background-color: #ffe6e6;
+    padding: 15px;
+}
+
+/* Add more specific styles as needed */
