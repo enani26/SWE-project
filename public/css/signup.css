@@ -1,9 +1,9 @@
 .container {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 10auto;
     padding: 50px;
     background-color: #f2f2f2;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   
   h2 {
