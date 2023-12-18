@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<footer style="display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; flex-flow: row wrap; padding: 50px; color: #fff; background-color: #25242a;">
+<footer style="display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; flex-flow: row wrap; padding: 50px; color: #fff; background-color: #25242a; margin-down:50px">
 
     <div style="flex: 1 100%;" class="left-area">
         <h2 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">Store</h2>
