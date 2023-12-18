@@ -16,7 +16,7 @@
         <input type="text" id="firstname" name="firstname" required>
       </div>
       <div class="form-group">
-        <label for="lastname">lastname:</label>
+        <label for="name">lastname:</label>
         <input type="lastname" id="lastname" name="lastname" required>
       </div>
       <div class="form-group">
@@ -28,7 +28,7 @@
         <input type="password" id="password" name="password" required>
       </div>
       <div class="form-group">
-        <label for="phone">phone:</label>
+        <label for="name">phone:</label>
         <input type="phone" id="phone" name="phone" required>
       </div>
       <button type="submit">Register</button>
