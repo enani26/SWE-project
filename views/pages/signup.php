@@ -12,8 +12,12 @@
     <h2>Registration Form</h2>
     <form action="register.php" method="POST">
       <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="name">FirstName:</label>
+        <input type="text" id="firstname" name="firstname" required>
+      </div>
+      <div class="form-group">
+        <label for="lastname">lastname:</label>
+        <input type="lastname" id="lastname" name="lastname" required>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
@@ -24,8 +28,8 @@
         <input type="password" id="password" name="password" required>
       </div>
       <div class="form-group">
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
+        <label for="phone">phone:</label>
+        <input type="phone" id="phone" name="phone" required>
       </div>
       <button type="submit">Register</button>
     </form>
