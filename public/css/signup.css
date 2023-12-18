@@ -1,6 +1,6 @@
 .container {
     max-width: 400px;
-    margin: 10auto;
+    margin: 0auto;
     padding: 50px;
     background-color: #f2f2f2;
     border-radius: 5px;
@@ -8,6 +8,9 @@
   
   h2 {
     text-align: center;
+  }
+  .form-group {
+    margin-top: 15px;
   }
   
   .form-group {
