@@ -8,7 +8,6 @@
 </head>
 <body>
 <?= include '../partials/navbar.php' ?>
-<?= include '../partials/footer.php' ?>
   <div class="container">
     <h2>Registration Form</h2>
     <form action="register.php" method="POST">
