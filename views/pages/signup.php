@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../../public/css/signup.css">
 </head>
 <body>
+<?= include '../partials/navbar.php' ?>
   <div class="container">
     <h2>Registration Form</h2>
     <form action="register.php" method="POST">
