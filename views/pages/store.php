@@ -54,7 +54,10 @@ $values = $model->getproducts();
                     <?= htmlspecialchars($val->getproduct_price()) ?>
                 </p>
                 
-                <button class="add-to-cart-btn" method="post" action ="add_to_cart.php" >Add to Cart</button>
+                   <form action="cart.php" method="post">
+    <input type="hidden" name="product_name" value="<?= htmlspecialchars($val->getproduct_name()) ?>">
+    <button type="submit" class="add-to-cart-btn" name="add_to_cart">Add to Cart</button>
+</form>
             </div>
 
         <?php endforeach ?>

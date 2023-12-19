@@ -36,3 +36,34 @@
   </div>
 </body>
 </html>
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form data
+    $firstname = $_POST['firstname'];
+    $lastname=$_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone=$_POST['phone'];
+
+    // Sanitize and validate the data as needed
+
+    // Step 4: Insert data into the database
+    $query = "INSERT INTO user (firstname, lastname,email,password,phone) VALUES ($firstname,$lastname,$email,$password,$phone);
+    $statement = mysqli_prepare($connection, $query);
+
+    mysqli_stmt_bind_param($statement, "sss", $firstname,$lastname,$email,$password,$email,$phone);
+    mysqli_stmt_execute($statement);
+
+    if (mysqli_stmt_affected_rows($statement) > 0) {
+        // Registration successful
+        echo "Registration successful!";
+    } else {
+        // Registration failed
+        echo "Registration failed!";
+    }
+
+    mysqli_stmt_close($statement);
+}
+
+mysqli_close($connection);
+?>

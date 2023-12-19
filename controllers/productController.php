@@ -41,6 +41,36 @@ class productController extends Controller
 
         $this->model->insert_product($product_name, $product_description, $product_keyword, $vall, $product_price, $status);
     }
-}
+    function edit_product(){
+            $productName = $_POST['product_name'];
+            $productDescription = $_POST['product_description'];
+            $productKeyword = $_POST['product_keyword'];
+            $productImg = $_POST['product_img'];
+            $productPrice = $_POST['product_price'];
+            $status = $_POST['status'];
+
+            $this->productsModel->editProduct($productName, $productDescription, $productKeyword, $productImg, $productPrice, $status);
+            $this->redirectToSuccessPage();
+        }
+    
+    function delete_product(){
+         
+            $productName = $_POST['product_name'];
+            $productDescription = $_POST['product_description'];
+            $productKeyword = $_POST['product_keyword'];
+            $productImg = $_POST['product_img'];
+            $productPrice = $_POST['product_price'];
+            $status = $_POST['status'];
+            
+            $this->productsModel->delete_Product($productName, $productDescription, $productKeyword, $productImg, $productPrice, $status);
+            $this->redirectToSuccessPage();
+        
+    }
+    private function redirectToSuccessPage() {
+            
+        header("Location:home.php");
+        exit();
+    }
+};
 
 ?>
