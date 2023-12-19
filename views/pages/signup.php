@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Sanitize and validate the data as needed
 
     // Step 4: Insert data into the database
-    $query = "INSERT INTO user (firstname, lastname,email,password,phone) VALUES ($firstname,$lastname,$email,$password,$phone);
+    $query = "INSERT INTO user (firstname, lastname, email,password,phone) VALUES ($firstname,$lastname,$email,$password,$phone);
     $statement = mysqli_prepare($connection, $query);
 
     mysqli_stmt_bind_param($statement, "sss", $firstname,$lastname,$email,$password,$email,$phone);
@@ -57,7 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_stmt_affected_rows($statement) > 0) {
         // Registration successful
         echo "Registration successful!";
-    } else {
+    } 
+    else {
         // Registration failed
         echo "Registration failed!";
     }

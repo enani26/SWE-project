@@ -1,6 +1,8 @@
 <?php
   require_once(__ROOT__ . "models/model.php");
+?>
 
+<?php
 class User extends model{
   private $id;
   private $firstname;
@@ -100,7 +102,7 @@ function getFirstName() {
           echo "updated successfully.";
           $this->readUser($this->id);
       } else{
-          echo "ERROR: Could not able to execute $sql. " . $conn->error;
+          echo "ERROR: Could not able to execute $sql. " . $this->conn->error;
       }
 
 }
@@ -109,7 +111,7 @@ function deleteUser(){
     if($this->db->query($sql) === true){
           echo "deletet successfully.";
       } else{
-          echo "ERROR: Could not able to execute $sql. " . $conn->error;
+          echo "ERROR: Could not able to execute $sql. " . $this->conn->error;
       }
   }
 }
