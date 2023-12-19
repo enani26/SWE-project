@@ -47,6 +47,7 @@ button {
     padding: 10px;
     cursor: pointer;
     width: 100%;
+    
 }
 
 button:hover {
@@ -61,7 +62,7 @@ button:hover {
 /* Delete Product Button styling */
 button[onclick="confirmDelete"] {
     background-color: #d9534f;
-    margin-top: 15px; /* Space between Edit form and Delete button */
+    margin-top: 25px; /* Space between Edit form and Delete button */
 }
 
 button[onclick="confirmDelete"]:hover {
