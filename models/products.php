@@ -60,7 +60,5 @@ class products extends Model
     }
 
 
-
-
 }
 ?>

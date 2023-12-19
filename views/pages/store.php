@@ -4,6 +4,8 @@ require_once('../../controllers/productController.php');
 $model = new products();
 $controller = new productController($model);
 
+
+
 $values = $model->getproducts();
 
 ?>
@@ -21,25 +23,20 @@ $values = $model->getproducts();
 
 
 <body>
+<?= include '../partials/navbar.php' ?>
 <header style="position: absolute; top: 0; left: 0; width: 100%; padding: 10px 20px; background: white; display: flex; justify-content: space-between; align-items: center; z-index: 100;">
-        <a href="home.php" style="font-size: 24px; color: black; text-decoration: dotted; font-weight: 700;">Misery</a>
+        <a href="#" style="font-size: 24px; color: black; text-decoration: dotted; font-weight: 700;">Misery</a>
         <nav>
             <a href="home.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Home</a>
             <a href="store.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Shop</a>
-            <a href="contactus.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Contact</a>
+            <a href="contact.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Contact</a>
             <a href="cart.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 25px; margin-left: 20px; transition: color 0.3s;"><i class='bx bx-cart'></i></a>
-            <a href="register.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; margin-right: 30px; transition: color 0.3s;">Sign-in</a>
+            <a href="Register1.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Sign-in</a>
         </nav>
     </header>
 
 
-<br>
-    <div class="search-container">
-        <form action="">
-            <input type="text" placeholder="Search...">
-            <input type="submit" value="search" name="search_data">
-        </form>
-    </div>
+
     <br><br><br><br>
 
     <div class="small-container">
