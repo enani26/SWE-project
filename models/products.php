@@ -56,6 +56,7 @@ class products extends Model
         } else {
             echo "ERROR: Could not able to execute $sql. ";
         }
+    }
 
     function editproduct($product_name, $product_description, $product_keyword, $product_img, $product_price, $status){
             $sql = "update store_products set product_name ='$product_name',product_description='$product_description',product_keyword ='$product_keyword',product_img ='$product_img' where id=$this->id;";
@@ -65,6 +66,7 @@ class products extends Model
               } else{
                   echo "ERROR: Could not able to execute $sql. " . $conn->error;
               }
+            }
     function delete_product(){
         
             $sql="delete from store_products where id=$this->id;";
@@ -75,10 +77,9 @@ class products extends Model
     
           }
     }
-    }
+    
 
 
 
-
-}
+};
 ?>

@@ -1,5 +1,5 @@
 <?php
 require_once('model.php');
-class checkout extends model{
-    
+class c extends model{
+
 }
