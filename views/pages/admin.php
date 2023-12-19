@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../public/css/productmanagement.css">
 </head>
 <body>
-    <h1>Admin Dashboard</h1>
+    <h1>Product Management</h1>
 
     <!-- Add Product Form -->
     <form action="AdminController.php" method="post">
