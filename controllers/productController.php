@@ -52,9 +52,9 @@ class productController extends Controller
             $this->productsModel->editProduct($productName, $productDescription, $productKeyword, $productImg, $productPrice, $status);
             $this->redirectToSuccessPage();
         }
-    }
+    
     function delete_product(){
-         {
+         
             $productName = $_POST['product_name'];
             $productDescription = $_POST['product_description'];
             $productKeyword = $_POST['product_keyword'];
@@ -64,13 +64,13 @@ class productController extends Controller
             
             $this->productsModel->delete_Product($productName, $productDescription, $productKeyword, $productImg, $productPrice, $status);
             $this->redirectToSuccessPage();
-        }
+        
     }
     private function redirectToSuccessPage() {
             
         header("Location:home.php");
         exit();
     }
-}
+};
 
 ?>
