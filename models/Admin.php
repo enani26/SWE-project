@@ -11,7 +11,7 @@ class Admin extends User{
 		$db = $this->connect();
 		$result = $this->readAdmins();
 		while ($row = $result->fetch_assoc()) {
-			array_push($this->users, new User($row["id"],$row["firstname"],$row["lastname"],$row["email"],$row["Password"],$row['phone'],$row["UserType"]));
+			array_push($this->admins, new User($row["id"],$row["firstname"],$row["lastname"],$row["email"],$row["Password"],$row['phone'],$row["UserType"]));
 		}
 	}
     function getAdmins() {
@@ -29,13 +29,13 @@ class Admin extends User{
 		}
 	}
     function insertAdmin($Firstname,$Lastname,$Email, $password, $phone,$UserType){
-		$sql = "INSERT INTO user (firstname,lastname,email,password,phone,UserType) VALUES ('$Firstname','$Lastname','$Email','$password', $phone','$UserType')";
+		$sql = "INSERT INTO user (firstname,lastname,email,password,phone,UserType) VALUES ('$Firstname','$Lastname','$Email','$password', '$phone','$UserType')";
 		if($this->db->query($sql) === true){
 			echo "Records inserted successfully.";
 			$this->fillArray();
 		} 
 		else{
-			echo "ERROR: Could not able to execute $sql. " . $conn->error;
+			echo "ERROR: Could not able to execute $sql. " . $this->db->error;
 		}
 	}
 	public function editAdmin() {
