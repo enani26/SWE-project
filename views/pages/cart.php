@@ -16,16 +16,19 @@
 
         <?php
 session_start();
-require_once('../../models/product.php'); 
+require_once('../../models/product.php');
+require_once("../../db/Dbh.php");
 
-function fetchProductDetailsByName($product_name) {
-    global $conn;
+// Create a new instance of the Dbh class to establish a database connection
+$dbh = new Dbh();
+$conn = $dbh->connect();
 
-    // Ensure $conn is a valid MySQLi connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
+function fetchProductDetailsByName($product_name, $conn) {
     $safe_product_name = mysqli_real_escape_string($conn, $product_name);
     $sql = "SELECT * FROM store_products WHERE product_name = '$safe_product_name'";
     $result = mysqli_query($conn, $sql);
@@ -52,7 +55,7 @@ function addToCart($product) {
     }
 
     // Check if the product is already in the cart
-    $product_index = array_search($product->getId(), array_column($_SESSION['cart'], 'product_id'));
+    $product_index = array_search($product->getproduct_name(), array_column($_SESSION['cart'], 'product_name'));
 
     if ($product_index !== false) {
         // Product is already in the cart, increase quantity
@@ -60,17 +63,18 @@ function addToCart($product) {
     } else {
         // Product is not in the cart, add it
         $_SESSION['cart'][] = [
-            'product_id' => $product->getId(),
+            'product_name' => $product->getproduct_name(),
             'quantity' => 1,
             'product' => $product
         ];
     }
 }
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart'])) {
     if (isset($_POST['product_name'])) {
         $product_name = $_POST['product_name'];
-        $product = fetchProductDetailsByName($product_name);
+        $product = fetchProductDetailsByName($product_name, $conn);
 
         if ($product) {
             addToCart($product);
@@ -83,59 +87,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart'])) {
     }
 }
 
-
-        if (!empty($_SESSION['cart'])) {
-            foreach ($_SESSION['cart'] as $cartItem) {
-                $product = $cartItem['product'];
-
-                // Output each cart item using HTML
-                echo <<<HTML
-<div class='Cart-Items'>
-    <div class='image-box'>
-        <img src='{$product->getProductImg()}' style='height: 120px;' />
-    </div>
-    <div class='about'>
-        <h1 class='title'>{$product->getProductName()}</h1>
-    </div>
-    <div class='counter'>
-        <div class='btn'>+</div>
-        <div class='count'>{$cartItem['quantity']}</div>
-        <div class='btn'>-</div>
-    </div>
-    <div class='prices'>
-        <div class='amount'>\${$product->getProductPrice()}</div>
-        <div class='save'><u>Save for later</u></div>
-        <div class='remove'><u>Remove</u></div>
-    </div>
-</div>
-HTML;
-
-            }
-
-            // Calculate and display dynamic subtotal
-            $subtotal = array_sum(array_map(function ($item) {
-                return $item['quantity'] * $item['product']->getProductPrice();
-            }, $_SESSION['cart']));
-
-            echo <<<HTML
-            <hr>
-            <div class='checkout'>
-                <div class='total'>
-                    <div>
-                        <div class='Subtotal'>Sub-Total</div>
-                        <div class='items'>{${count($_SESSION['cart'])}} items </div>
-                    </div>
-                    <div class='total-amount'>\${$subtotal}</div>
-                </div>
-                <button class='button'>Checkout</button>
+if (!empty($_SESSION['cart'])) {
+    foreach ($_SESSION['cart'] as $cartItem) {
+        $product = $cartItem['product'];
+    
+        // Output each cart item using HTML
+        echo <<<HTML
+        <div class='Cart-Items'>
+            <div class='image-box'>
+                <img src='{$product->getproduct_img()}' style='height: 120px;' />
             </div>
-            HTML;
-            
-        } else {
-            echo "<p>Your cart is empty.</p>";
-        }
-        ?>
+            <div class='about'>
+                <h1 class='title'>{$product->getproduct_name()}</h1>
+            </div>
+            <div class='counter'>
+                <div class='btn'>+</div>
+                <div class='count'>{$cartItem['quantity']}</div>
+                <div class='btn'>-</div>
+            </div>
+            <div class='prices'>
+                <div class='amount'>\${$product->getproduct_price()}</div>
+                <div class='save'><u>Save for later</u></div>
+                <div class='remove'><u>Remove</u></div>
+            </div>
+        </div>
+    HTML;
+    }
+    
 
+    // Calculate and display dynamic subtotal
+    $subtotal = array_sum(array_map(function ($item) {
+        return $item['quantity'] * $item['product']->getproduct_price();
+    }, $_SESSION['cart']));
+
+    echo <<<HTML
+    <hr>
+    <div class='checkout'>
+        <div class='total'>
+            <div>
+                <div class='Subtotal'>Sub-Total</div>
+                <div class='items'>{${count($_SESSION['cart'])}} items </div>
+            </div>
+            <div class='total-amount'>\${$subtotal}</div>
+        </div>
+        <button class='button'>Checkout</button>
     </div>
+    HTML;
+} else {
+    echo "<p>Your cart is empty.</p>";
+}
+?>
+</div>
 </body>
 </html>
