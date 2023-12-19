@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
   <link rel="stylesheet" href="admindashboard.css"/>
+  <link rel="stylesheet" href="productmanagement.php"/>
 </head>
 
 <body>
@@ -22,23 +23,10 @@
             <span class="icon"><i class="fas fa-chart-bar"></i></span>
             <span class="link-text">Dashboard</span>
           </a></li>
-        <li>
-          <a href="#" class="myBtn" data-toggle="collapse" data-target="#my-sub" title="Post" aria-expanded="false">
+          <li><a href="productmanagement.php" class="link-active" title="Product Management">
             <span class="icon"><i class="fas fa-list"></i></span>
-            <span class="link-text">Post</span>
-            <span class="ml-auto myCaret"></span>
-          </a>
-          <div id="my-sub" class="collapse bg-secondary">
-            <a href="#" title="All Post">
-              <span class="icon"><i class="fas fa-copy"></i></span>
-              <span class="link-text">All Post</span>
-            </a>
-            <a href="#" title="Add Post">
-              <span class="icon"><i class="fas fa-pen-fancy"></i></span>
-              <span class="link-text">Add Post</span>
-            </a>
-          </div>
-        </li>
+            <span class="link-text">product Management</span>
+          </a></li> 
         <li><a href="#" title="Category">
             <span class="icon"><i class="fas fa-list-alt"></i></span>
             <span class="link-text">Category</span>
@@ -153,39 +141,6 @@
           </div>
 
         </div>
-
-        <div class="row">
-          <div class="col-lg-6 p-2">
-            <div class="jumbotron rounded-0">
-              <h1 class="display-4">Hello World</h1>
-              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, recusandae maiores
-              </p>
-              <hr class="my-4">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, voluptatem ea similique ratione vero
-                mollitia accusantium! Eius amet minus dolorum sint odio ut ipsam temporibus necessitatibus blanditiis
-                quidem, iusto doloremque!</p>
-              <a href="#" class="btn btn-primary btn-lg rounded-0">Learn More</a>
-            </div>
-          </div>
-          <div class="col-lg-6 p-2">
-            <div class="jumbotron rounded-0">
-              <h1 class="display-4">Hello World</h1>
-              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, recusandae maiores
-              </p>
-              <hr class="my-4">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, voluptatem ea similique ratione vero
-                mollitia accusantium! Eius amet minus dolorum sint odio ut ipsam temporibus necessitatibus blanditiis
-                quidem, iusto doloremque!</p>
-              <a href="#" class="btn btn-primary btn-lg rounded-0">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
 </body>
 
 </html>
