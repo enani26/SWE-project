@@ -7,12 +7,12 @@ body, h1, form, button {
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #867878;
+    background-color: #faf6f6;
 }
 
 h1 {
     text-align: center;
-    text-shadow: #fff;
+    text-shadow: #7e5c5c;
     text-decoration: underline;
     color: #4bb82b;
     margin-top: 20px;
