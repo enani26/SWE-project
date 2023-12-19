@@ -14,7 +14,7 @@ h1 {
     text-align: center;
     text-shadow: #7e5c5c;
     text-decoration: underline;
-    color: #4bb82b;
+    color: #2b74b8;
     margin-top: 20px;
 }
 
@@ -41,7 +41,7 @@ input {
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #2b74b8;
     color: #fff;
     border: none;
     padding: 10px;
@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2b74b8;
 }
 
 /* Edit Product Form styling (similar to Add Product Form) */
