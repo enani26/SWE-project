@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="../../public/css/signup.css">
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="../../public/css/signup.css">
 </head>
 <body>
-    <div class="hero">
-        <div class="form-box">
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Login</button>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
-            </div>
-
-            <div class="social-icons">
-                <img src="facebook.png">
-                <img src="twitter.png">
-                <img src="instagram.png">
-            </div>
-
-            <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="username" required>
-                <input type="text" class="input-field" placeholder="Enter Password" required>
-                <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Login</button>
-            </form>
-
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="username" required>
-                <input type="email" class="input-field" placeholder="email" required>
-                <input type="password" class="input-field" placeholder="password" required>
-                <input type="checkbox" class="check-box"><span>    I agree to terms & conditions</span>
-                <button type="submit" class="submit-btn">Register</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        var x = document.getElementById("login");
-        var y = document.getElementById("register");
-        var z = document.getElementById("btn");
-
-        function register() {
-            x.style.left = "-400px";
-            y.style.left = "50px";
-            z.style.left = "110px";
-        }
-
-        function login() {
-            x.style.left = "50px";
-            y.style.left = "450px";
-            z.style.left = "0";
-        }
-    </script>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form action="register.php" method="POST">
+      <div class="form-group">
+        <label for="name">FirstName:</label>
+        <input type="text" id="firstname" name="firstname" required>
+      </div>
+      <div class="form-group">
+        <label for="name">lastname:</label>
+        <input type="lastname" id="lastname" name="lastname" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="name">phone:</label>
+        <input type="phone" id="phone" name="phone" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
 </body>
-
 </html>
+
+<?php
+session_start();
+include_once "../../includes/dbh.inc.php";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $db=new DBh();
+    // Retrieve form data
+    $firstname = $_POST['firstname'];
+    $lastname=$_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $phone=$_POST['phone'];
+    // Sanitize and validate the data as needed
+
+    // Step 4: Insert data into the database
+    $query = "INSERT INTO user (firstname, lastname, email, password, phone) VALUES ('$firstname', '$lastname', '$email', '$password', '$phone')";
+    $statement = mysqli_prepare($db->getConnection(), $query);
+    mysqli_stmt_bind_param($statement, "sssss", $firstname,$lastname,$email,$password,$phone);
+    mysqli_stmt_execute($statement);
+
+    if (mysqli_stmt_affected_rows($statement) > 0) {
+        header("location:home.php");
+        exit(); // Ensure that no further code is executed after the redirect
+    } else {
+        
+        echo "Registration failed!";
+    }
+
+    mysqli_stmt_close($statement);
+    $db->closeConnection();
+}
+?>

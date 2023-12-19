@@ -12,7 +12,6 @@
         <button type="submit" name="add_product">Add Product</button>
     </form>
     <div class="product-container">
-        <?php foreach ($values as $val): ?>
             <div class="product">
     
                 <!-- Edit Product Button -->
@@ -24,7 +23,7 @@
                 <!-- Delete Product Button -->
                 <button onclick="confirmDelete(<?= isset($val['product_id']) ? $val['product_id'] : ''; ?>">Delete Product</button>
             </div>
-        <?php endforeach; ?>
+        
     </div>
 
     <script>

@@ -31,14 +31,7 @@
             <span class="icon"><i class="fas fa-list-alt"></i></span>
             <span class="link-text">Category</span>
           </a></li>
-        <li><a href="#" title="Comment">
-            <span class="icon"><i class="fas fa-comment"></i></span>
-            <span class="link-text">Comment</span>
-          </a></li>
-        <li><a href="#" title="Tags">
-            <span class="icon"><i class="fas fa-tags"></i></span>
-            <span class="link-text">Tags</span>
-          </a></li>
+        
         <li><a href="#" title="Profile">
             <span class="icon"><i class="fas fa-user-circle"></i></span>
             <span class="link-text">Profile</span>
