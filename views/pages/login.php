@@ -78,7 +78,7 @@ $db=new DBh();
 		$_SESSION["phone"]=$row["phone"];
         $_SESSION["UserType"]=$row["UserType"];
         //redirect after a succeful login
-		header("Location:userprofile.php");
+		header("Location:admindashboard.php");
 	}
 	else	{
 		echo "Invalid Email or Password";

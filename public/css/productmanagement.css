@@ -4,42 +4,61 @@ body, h1, form, button {
     padding: 0;
 }
 
+/* Body styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #faf6f6;
+    text-align: center;
+    margin: 20px;
 }
 
+/* Heading styles */
 h1 {
-    text-align: center;
-    text-shadow: #7e5c5c;
     text-decoration: underline;
     color: #2b74b8;
     margin-top: 20px;
 }
 
-/* Add Product Form styling */
+/* Form styles */
 form {
-    max-width: 400px;
-    margin: 20px auto;
+    display: inline;
+}
+
+/* Product container styles */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Product item styles */
+.product {
+    max-width: 300px;
+    margin: 20px;
     padding: 15px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
+/* Edit Product Button styles */
+.product form {
+    display: inline;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+/* Heading 3 styles */
+h3 {
+    margin: 0;
+    color: #2b74b8;
 }
 
+/* Paragraph styles */
+p {
+    margin: 10px 0;
+}
+
+/* Button styles */
 button {
     background-color: #2b74b8;
     color: #fff;
@@ -47,26 +66,9 @@ button {
     padding: 10px;
     cursor: pointer;
     width: 100%;
-    
 }
 
+/* Button hover effect */
 button:hover {
-    background-color: #2b74b8;
+    background-color: #1e558d;
 }
-
-/* Edit Product Form styling (similar to Add Product Form) */
-#edit_product_name {
-    margin-top: 15px; /* Space between Add and Edit forms */
-}
-
-/* Delete Product Button styling */
-button[onclick="confirmDelete"] {
-    background-color: #d9534f;
-    margin-top: 25px; /* Space between Edit form and Delete button */
-}
-
-button[onclick="confirmDelete"]:hover {
-    background-color: #c9302c;
-}
-
-/* Add your additional styles and responsive adjustments here */
