@@ -1,0 +1,79 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Input Styles */
+.form-outline {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #212529; /* Dark text color */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da; /* Light border color */
+    border-radius: 5px;
+}
+
+/* Submit Button Styles */
+.form-outline:last-child {
+    margin-bottom: 0;
+}
+
+/* Button Styles */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .form-outline {
+        max-width: 100%;
+    }
+}

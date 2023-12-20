@@ -1,72 +1,47 @@
-/* Reset some default styles for consistency */
-body, h1, form, button {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #faf6f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 
 h1 {
     text-align: center;
-    text-shadow: #7e5c5c;
-    text-decoration: underline;
-    color: #2b74b8;
-    margin-top: 20px;
-}
-
-/* Add Product Form styling */
-form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
 }
 
 button {
-    background-color: #2b74b8;
-    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
     border: none;
-    padding: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-    
+    font-size: 16px;
 }
 
-button:hover {
-    background-color: #2b74b8;
+button[name="add_product"] {
+    background-color: #43a047;
+    color: #fff;
 }
 
-/* Edit Product Form styling (similar to Add Product Form) */
-#edit_product_name {
-    margin-top: 15px; /* Space between Add and Edit forms */
+button[name="edit_product"] {
+    background-color: #1976D2; 
+    color: #fff;
 }
 
-/* Delete Product Button styling */
-button[onclick="confirmDelete"] {
-    background-color: #d9534f;
-    margin-top: 25px; /* Space between Edit form and Delete button */
+button[name="delete_product"] {
+    background-color: #d32f2f; 
+    color: #fff;
 }
 
-button[onclick="confirmDelete"]:hover {
-    background-color: #c9302c;
+.product-container {
+    text-align: center;
 }
 
-/* Add your additional styles and responsive adjustments here */
+.product {
+    display: inline-block;
+    margin: 20px;
+}
