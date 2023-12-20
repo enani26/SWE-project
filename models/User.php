@@ -92,7 +92,7 @@ function getFirstName() {
         $this->lastname  = "";
         $this->email     = "";		
         $this->password  = "";
-		$this->phone     = "";
+		    $this->phone     = "";
         $this->UserType  = "";
     }
   }
