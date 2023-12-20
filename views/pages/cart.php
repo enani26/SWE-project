@@ -128,7 +128,7 @@
                     echo <<<HTML
                     <div class='Cart-Items'>
                         <div class='image-box'>
-                            <img src='{$product->getproduct_img()}' style='height: 120px;' />
+                            <img src='../pages/img/{$product->getproduct_img()}' style='height: 120px;' />
                         </div>
                         <div class='about'>
                             <h1 class='title'>{$product->getproduct_name()}</h1>
@@ -185,7 +185,7 @@
                         <div class='items'>$itemCount items </div>
                         <div class='total-amount'>\${$subtotal}</div>
                     </div>
-                    <button class='button'>Checkout</button>
+                    <button class='button' onclick="window.location.href='MainPayment.php'">Checkout</button>
                 </div>
             </div>
 HTML;
