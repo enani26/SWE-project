@@ -32,6 +32,9 @@
             <span class="icon"><i class="fas fa-cog"></i></span>
             <span class="link-text">Setting</span>
           </a></li>
+          <li><a href="home.php" title="home">
+            <span class="link-text">Return to Home Page</span>
+          </a></li>
         <li><a href="signout.php" title="Sign Out">
             <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
             <span class="link-text">Sign Out</span>
