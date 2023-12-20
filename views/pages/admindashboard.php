@@ -27,20 +27,12 @@
             <span class="icon"><i class="fas fa-list"></i></span>
             <span class="link-text">product Management</span>
           </a></li> 
-        <li><a href="#" title="Category">
-            <span class="icon"><i class="fas fa-list-alt"></i></span>
-            <span class="link-text">Category</span>
-          </a></li>
         
-        <li><a href="#" title="Profile">
-            <span class="icon"><i class="fas fa-user-circle"></i></span>
-            <span class="link-text">Profile</span>
-          </a></li>
         <li><a href="#" title="Setting">
             <span class="icon"><i class="fas fa-cog"></i></span>
             <span class="link-text">Setting</span>
           </a></li>
-        <li><a href="#" title="Sign Out">
+        <li><a href="signout.php" title="Sign Out">
             <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
             <span class="link-text">Sign Out</span>
           </a></li>
