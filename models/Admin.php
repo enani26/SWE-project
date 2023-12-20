@@ -1,4 +1,5 @@
 <?php
+
 class Admin extends User{
     private $admins;
 
@@ -54,5 +55,5 @@ class Admin extends User{
 				  echo "ERROR: Could not able to execute $sql. " . $conn->error;
 		  }
 	}
-	
+    
 }

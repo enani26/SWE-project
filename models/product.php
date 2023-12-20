@@ -80,9 +80,6 @@ class product extends Model
     }
 
 
-
-
-
 }
 
 
