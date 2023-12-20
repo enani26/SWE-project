@@ -23,12 +23,6 @@
         </div>
 
         <?php
-        
-        echo "<pre>";
-print_r($_SESSION['cart']);
-echo "</pre>";
-
-
         // Create a new instance of the Dbh class to establish a database connection
         $dbh = new Dbh();
         $conn = $dbh->connect();
