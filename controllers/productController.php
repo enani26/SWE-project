@@ -53,16 +53,10 @@ class productController extends Controller
             $this->redirectToSuccessPage();
         }
     
-    function delete_product(){
+    function deleteproduct(){
          
-            $productName = $_POST['product_name'];
-            $productDescription = $_POST['product_description'];
-            $productKeyword = $_POST['product_keyword'];
-            $productImg = $_POST['product_img'];
-            $productPrice = $_POST['product_price'];
-            $status = $_POST['status'];
-            
-            $this->productsModel->delete_Product($productName, $productDescription, $productKeyword, $productImg, $productPrice, $status);
+            $productId = $_POST['product_id'];
+            $this->productsModel->delete_Product($productId);
             $this->redirectToSuccessPage();
         
     }

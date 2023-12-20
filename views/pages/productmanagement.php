@@ -1,3 +1,13 @@
+<?php
+require_once('../../models/products.php');
+require_once('../../controllers/productController.php');
+$model = new products();
+$controller = new productController($model);
+
+$values = $model->getproducts();
+//get all products
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,43 +18,47 @@
 </head>
 <body>
     <h1>Product Management</h1>
-    <form action="insertProduct.php" method="post" style="display: inline;">
+
+    <!-- Add Product Form -->
+    <form action="AdminController.php" method="post">
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name" required>
         <button type="submit" name="add_product">Add Product</button>
     </form>
-    <div class="product-container">
-            <div class="product">
-    
-                <!-- Edit Product Button -->
-                <form action="editpage.php" method="post" style="display: inline;">
-                    <input type="hidden" name="product_id" value="<?= isset($val['product_id']) ? $val['product_id'] : ''; ?>">
-                    <button type="submit" name="edit_product">Edit Product</button>
-                </form>
-    
-                <!-- Delete Product Button -->
-                <button onclick="confirmDelete(<?= isset($val['product_id']) ? $val['product_id'] : ''; ?>">Delete Product</button>
-            </div>
-        
-    </div>
+
+    <!-- Edit Product Form -->
+    <form action="AdminController.php" method="post">
+        <label for="edit_product_name">Edit Product Name:</label>
+        <input type="text" id="edit_product_name" name="edit_product_name" required>
+        <button type="submit" name="edit_product">Edit Product</button>
+    </form>
+
+    <!-- Delete Product Button -->
+    <button onclick="confirmDelete()">Delete Product</button>
 
     <script>
-        function confirmDelete(productId) {
+        function confirmDelete() {
             var confirmation = confirm("Are you sure you want to delete this product?");
             if (confirmation) {
-                fetch('productController.php', {
+                //get the product id
+                var product_id="your product id here"
+               
+                //send a delete request using fetch
+                fetch('AdminController.php', {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ delete_product: true, product_id_to_delete: productId }),
+                    body: JSON.stringify({ delete_product: true, product_id_to_delete: product_id }),
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.status === 'success') {
-                        alert('Product deleted successfully');
-                    } else {
-                        alert('Failed to delete product');
-                    }
-                    location.reload();
+                    // Handle the response data if needed
+                    console.log(data);
+                    // Optionally, reload the page or update the UI
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
                 });
             }
         }
