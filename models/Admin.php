@@ -29,13 +29,13 @@ class Admin extends User{
 		}
 	}
     function insertAdmin($Firstname,$Lastname,$Email, $password, $phone,$UserType){
-		$sql = "INSERT INTO user (firstname,lastname,email,password,phone,UserType) VALUES ('$Firstname','$Lastname','$Email','$password', '$phone','$UserType')";
+		$sql = "INSERT INTO user (firstname,lastname,email,password,phone,UserType) VALUES ('$Firstname','$Lastname','$Email','$password', $phone','$UserType')";
 		if($this->db->query($sql) === true){
 			echo "Records inserted successfully.";
 			$this->fillArray();
 		} 
 		else{
-			echo "ERROR: Could not able to execute $sql. " . $this->db->error;
+			echo "ERROR: Could not able to execute $sql. " . $conn->error;
 		}
 	}
 	public function editAdmin() {
