@@ -1,5 +1,8 @@
  <?php 
     session_start();
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = [];
+    }
     include '../partials/navbar.php'; 
     require_once('../../models/product.php');
     require_once("../../db/Dbh.php");?>
@@ -98,10 +101,13 @@
             if (isset($_POST['product_id'])) {
                 $product_id = $_POST['product_id'];
                 $product = fetchProductDetailsById($product_id, $conn);
-
+        
                 if ($product) {
-                    addToCart($product, $conn);  // Pass the connection as the second argument
+                    addToCart($product, $conn);
                     
+                    // Redirect to prevent form resubmission
+                    header("Location: " . $_SERVER['PHP_SELF']);
+                    exit();
                 } else {
                     echo "Product not found.";
                 }
@@ -109,6 +115,8 @@
                 echo "Product ID not set.";
             }
         }
+        
+        
         // <<<<<<<<<<<<<<<< ADD ITEM TO CART END >>>>>>>>>>>>>>>>>>>
 
         // <<<<<<<<<<<<<<<< DISPLAY ITEMS START >>>>>>>>>>>>>>>>>>>
@@ -126,13 +134,20 @@
                             <h1 class='title'>{$product->getproduct_name()}</h1>
                         </div>
                         <div class='counter'>
-                            <div class='btn'>+</div>
-                            <div class='count'>{$cartItem['quantity']}</div>
-                            <div class='btn'>-</div>
-                        </div>
+                <form method="post" action="{$_SERVER['PHP_SELF']}">
+                    <input type="hidden" name="product_id" value="{$product->getproduct_id()}">
+                    <input type="hidden" name="action" value="increment">
+                    <button type="submit" class='btn'>+</button>
+                </form>
+                <div class='count'>{$cartItem['quantity']}</div>
+                <form method="post" action="{$_SERVER['PHP_SELF']}">
+                    <input type="hidden" name="product_id" value="{$product->getproduct_id()}">
+                    <input type="hidden" name="action" value="decrement">
+                    <button type="submit" class='btn'>-</button>
+                </form>
+            </div>
                         <div class='prices'>
                             <div class='amount'>\${$product->getproduct_price()}</div>
-                            <div class='save'><u>Save for later</u></div>
                             <form method="post" action="{$_SERVER['PHP_SELF']}">
                                 <input type="hidden" name="product_id" value="{$product->getproduct_id()}">
                                 <button type="submit" name="remove_product" class='remove'><u>Remove</u></button>
@@ -214,6 +229,26 @@ HTML;
   
         // <<<<<<<<<<<<<<<< REMOVE SPECIFIC ITEM  END>>>>>>>>>>>>>>>>>>>
 
+         // <<<<<<<<<<<<<<<< INCREMENT AND DECREMENT START >>>>>>>>>>>>>>>>>>>
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['product_id']) && isset($_POST['action'])) {
+                $product_id = $_POST['product_id'];
+                $action = $_POST['action'];
+        
+                $index_to_update = array_search($product_id, array_column($_SESSION['cart'], 'product_id'), true);
+        
+                if ($index_to_update !== false) {
+                    if ($action === 'increment') {
+                        $_SESSION['cart'][$index_to_update]['quantity'] += 1;
+                    } elseif ($action === 'decrement' && $_SESSION['cart'][$index_to_update]['quantity'] > 1) {
+                        $_SESSION['cart'][$index_to_update]['quantity'] -= 1;
+                    }
+                }
+            }
+        }
+        
+         // <<<<<<<<<<<<<<<< INCREMENT AND DECREMENT END >>>>>>>>>>>>>>>>>>>
         ?>
     </div>
 </body>
