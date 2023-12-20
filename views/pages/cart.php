@@ -32,26 +32,40 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
+            // <<<<<<<<<<<<<<<< FETCH PRODUCT FROM DATABASE START >>>>>>>>>>>>>>>>>>>
+
         function fetchProductDetailsById($product_id, $conn) {
             $safe_product_id = mysqli_real_escape_string($conn, $product_id);
             $sql = "SELECT * FROM store_products WHERE product_id = '$safe_product_id'";
             $result = mysqli_query($conn, $sql);
-
-            if ($result && mysqli_num_rows($result) > 0) {
-                $row = mysqli_fetch_assoc($result);
-                return new product(
-                    $row['product_id'],
-                    $row['product_name'],
-                    $row['product_description'],
-                    $row['product_keyword'],
-                    $row['product_img'],
-                    $row['product_price'],
-                    $row['status']
-                );
+        
+            if ($result) {
+                if (mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    return new product(
+                        $row['product_id'],
+                        $row['product_name'],
+                        $row['product_description'],
+                        $row['product_keyword'],
+                        $row['product_img'],
+                        $row['product_price'],
+                        $row['status']
+                    );
+                } else {
+                    echo "No rows found for product ID: $product_id";
+                }
+            } else {
+                echo "Error executing query: " . mysqli_error($conn);
             }
-
+        
             return null;
         }
+
+            // <<<<<<<<<<<<<<<< FETCH PRODUCT FROM DATABASE END >>>>>>>>>>>>>>>>>>>
+
+        
+            // <<<<<<<<<<<<<<<< ADD ITEM TO CART START >>>>>>>>>>>>>>>>>>>
+
 
         function addToCart($product, $conn) {
             if (!isset($_SESSION['cart'])) {
@@ -59,7 +73,7 @@
             }
         
             // Check if the product is already in the cart
-            $product_id = $product->getproduct_id(); // Assuming you have a getproduct_id() method
+            $product_id = $product->getproduct_id();
             $existing_product = array_search($product_id, array_column($_SESSION['cart'], 'product_id'), true);
         
             if ($existing_product !== false) {
@@ -70,7 +84,7 @@
                 $_SESSION['cart'][] = [
                     'product_id' => $product_id,
                     'quantity' => 1,
-                    'product_name' => $product->getproduct_name(), // Include other necessary fields
+                    'product_name' => $product->getproduct_name(),
                     'product_description' => $product->getproduct_description(),
                     'product_keyword' => $product->getproduct_keyword(),
                     'product_img' => $product->getproduct_img(),
@@ -78,8 +92,7 @@
                     'status' => $product->getstatus(),
                 ];
             }
-        }
-        
+        }    
 
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart'])) {
             if (isset($_POST['product_id'])) {
@@ -96,10 +109,13 @@
                 echo "Product ID not set.";
             }
         }
+        // <<<<<<<<<<<<<<<< ADD ITEM TO CART END >>>>>>>>>>>>>>>>>>>
+
+        // <<<<<<<<<<<<<<<< DISPLAY ITEMS START >>>>>>>>>>>>>>>>>>>
 
         if (!empty($_SESSION['cart'])) {
             foreach ($_SESSION['cart'] as $cartItem) {
-                $product = isset($cartItem['product']) ? $cartItem['product'] : null;
+                $product = fetchProductDetailsById($cartItem['product_id'], $conn);               
                 if ($product) {
                     echo <<<HTML
                     <div class='Cart-Items'>
@@ -118,27 +134,33 @@
                             <div class='amount'>\${$product->getproduct_price()}</div>
                             <div class='save'><u>Save for later</u></div>
                             <form method="post" action="{$_SERVER['PHP_SELF']}">
-                        <input type="hidden" name="product_id" value="{$product->getproduct_id()}">
-                        <button type="submit" name="remove_product" class='remove'><u>Remove</u></button>
-                    </form>
+                                <input type="hidden" name="product_id" value="{$product->getproduct_id()}">
+                                <button type="submit" name="remove_product" class='remove'><u>Remove</u></button>
+                            </form>
                         </div>
                     </div>
-            HTML;
+        HTML;
                 }
             }        
+            // <<<<<<<<<<<<<<<< DISPLAY ITEMS END >>>>>>>>>>>>>>>>>>>
 
-            // Calculate and display dynamic subtotal
-            $subtotal = array_sum(array_map(function ($item) {
-                // Check if the 'product' key exists in the $item array
-                if (isset($item['product']) && $item['product'] instanceof product) {
-                    return $item['quantity'] * $item['product']->getproduct_price();
+
+            // <<<<<<<<<<<<<<<< CALCULATE TOTAL START  >>>>>>>>>>>>>>>>>>>>>
+
+            $subtotal = array_sum(array_map(function ($item) use ($conn) {
+                $product = fetchProductDetailsById($item['product_id'], $conn);
+                if ($product) {
+                    return $item['quantity'] * $product->getproduct_price();
                 } else {
-                    // Handle the case where the 'product' key is not set or not a valid product object
                     return 0;
                 }
             }, $_SESSION['cart']));
+             
+            
+            // <<<<<<<<<<<<<<<< CALCULATE TOTAL END  >>>>>>>>>>>>>>>>>>>>>
 
-            $itemCount = count($_SESSION['cart']);
+
+            $itemCount = count($_SESSION['cart']); 
             echo <<<HTML
             <hr>
             <div class='checkout'>
@@ -156,11 +178,19 @@ HTML;
             echo "<p>Your cart is empty.</p>";
         }
 
+        // <<<<<<<<<<<<<<<< REMOVE ALL START >>>>>>>>>>>>>>>>>>>
+
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['remove_all'])) {
             // Clear the entire shopping cart
             unset($_SESSION['cart']);
             echo "Cart cleared.";
         }
+
+        // <<<<<<<<<<<<<<<< REMOVE ALL END >>>>>>>>>>>>>>>>>>>
+
+
+        // <<<<<<<<<<<<<<<< REMOVE SPECIFIC ITEM  START>>>>>>>>>>>>>>>>>>>
+
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['remove_product'])) {
             if (isset($_POST['product_id'])) {
                 $product_id_to_remove = $_POST['product_id'];
@@ -181,6 +211,8 @@ HTML;
                 echo "Product ID not set.";
             }
         }
+  
+        // <<<<<<<<<<<<<<<< REMOVE SPECIFIC ITEM  END>>>>>>>>>>>>>>>>>>>
 
         ?>
     </div>
