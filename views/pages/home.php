@@ -14,8 +14,8 @@
         <a href="#" style="font-size: 24px; color: black; text-decoration: dotted; font-weight: 700;">Misery</a>
         <nav>
             <a href="home.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Home</a>
-            <a href="Shop.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Shop</a>
-            <a href="Contact.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Contact</a>
+            <a href="store.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Shop</a>
+            <a href="contact.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Contact</a>
             <a href="cart.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 25px; margin-left: 20px; transition: color 0.3s;"><i class='bx bx-cart'></i></a>
             <a href="login.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Sign-in</a>
         </nav>
@@ -25,7 +25,7 @@
     <div class="home-text">
         <h1>New <br><span>Arrivals</span></h1>
         <p>Check our new Collection</p>
-        <a href="shop.php" class="btn">View Collection</a>
+        <a href="store.php" class="btn">View Collection</a>
     </div>
 </section>
 
@@ -84,7 +84,7 @@
     <div class="cta-text">
         <h6>Winter Sale</h6>
         <h4>30% OFF <br>NEW ARRIVAL</h4>
-        <a href="shop.php" class="btn">Shop Now</a>
+        <a href="store.php" class="btn">Shop Now</a>
     </div>
 </section>
 
@@ -136,8 +136,8 @@
     <div style="flex: 1 100%;" class="left-area">
         <h2 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">Store</h2>
         <ul style="list-style: none; padding-left: 0;">
-            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">about us</a></li>
-            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">our services</a></li>
+            <li><a href="aboutus.php" style="text-decoration: none; color: #999; line-height: 2em;">about us</a></li>
+            <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">our services</a></li>
             <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">privacy policy</a></li>
         </ul>
     </div>
@@ -155,10 +155,10 @@
     <div style="flex: 1 50%;" class="footer-col">
         <h4 style="font-size: 17px; font-weight: 600; text-transform: uppercase; color: cyan; letter-spacing: 3px;">online shopping</h4>
         <ul style="list-style: none; padding-left: 0;">
-            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Jacket</a></li>
-            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Hoodies</a></li>
-            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Pants</a></li>
-            <li><a href="#" style="text-decoration: none; color: #999; line-height: 2em;">Shorts</a></li>
+            <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Jacket</a></li>
+            <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Hoodies</a></li>
+            <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Pants</a></li>
+            <li><a href="store.php" style="text-decoration: none; color: #999; line-height: 2em;">Shorts</a></li>
         </ul>
     </div>
 

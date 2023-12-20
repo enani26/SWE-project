@@ -34,6 +34,10 @@ class product extends Model
     {
         return $this->status;
     }
+     function getproduct_id()
+    {
+        return $this->product_id;
+    }
     function __construct($product_id, $product_name = "", $product_description = "", $product_keyword = "", $product_img = ""
         , $product_price = "", $status = "")
     {

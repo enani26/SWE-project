@@ -49,8 +49,6 @@ class DBh{
 		return $result->fetch_assoc();
 	}
 
-	function __destruct(){
-		$this->conn->close();
-	}
+	
 }
 ?>
