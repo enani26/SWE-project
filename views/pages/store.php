@@ -55,7 +55,7 @@ $values = $model->getproducts();
                 </p>
                 
                    <form action="cart.php" method="post">
-    <input type="hidden" name="product_name" value="<?= htmlspecialchars($val->getproduct_name()) ?>">
+    <input type="hidden" name="product_id" value="<?= htmlspecialchars($val->getproduct_id()) ?>">
     <button type="submit" class="add-to-cart-btn" name="add_to_cart">Add to Cart</button>
 </form>
             </div>
