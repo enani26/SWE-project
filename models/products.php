@@ -64,7 +64,7 @@ class products extends Model
                   echo "updated successfully.";
                   $this->readproducts($this->id);
               } else{
-                  echo "ERROR: Could not able to execute $sql. " . $conn->error;
+                  echo "ERROR: Could not able to execute $sql. " ;
               }
             }
     function delete_product(){
@@ -73,7 +73,7 @@ class products extends Model
             if($this->db->query($sql) === true){
                   echo "deletet successfully.";
               } else{
-                  echo "ERROR: Could not able to execute $sql. " . $conn->error;
+                  echo "ERROR: Could not able to execute $sql. ";
     
           }
     }
