@@ -198,7 +198,6 @@ HTML;
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['remove_all'])) {
             // Clear the entire shopping cart
             unset($_SESSION['cart']);
-            echo "Cart cleared.";
         }
 
         // <<<<<<<<<<<<<<<< REMOVE ALL END >>>>>>>>>>>>>>>>>>>
@@ -248,7 +247,7 @@ HTML;
             }
         }
         
-         // <<<<<<<<<<<<<<<< INCREMENT AND DECREMENT END >>>>>>>>>>>>>>>>>>>
+         // <<<<<<<<<<<<<<<< INCREMENT AND DECREMENT END >>>>>>>>>>>>>>>>>>>   
         ?>
     </div>
 </body>
