@@ -17,7 +17,7 @@
             <a href="Shop.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Shop</a>
             <a href="Contact.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Contact</a>
             <a href="cart.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 25px; margin-left: 20px; transition: color 0.3s;"><i class='bx bx-cart'></i></a>
-            <a href="signup.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Sign-in</a>
+            <a href="login.php" style="text-decoration: none; color: black; font-weight: 500; font-size: 16px; margin-left: 20px; transition: color 0.3s;">Sign-in</a>
         </nav>
     </header>
 

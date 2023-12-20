@@ -11,7 +11,7 @@ class Admin extends User{
 		$db = $this->connect();
 		$result = $this->readAdmins();
 		while ($row = $result->fetch_assoc()) {
-			array_push($this->admins, new User($row["id"],$row["firstname"],$row["lastname"],$row["email"],$row["Password"],$row['phone'],$row["UserType"]));
+			array_push($this->$admins, new User($row["id"],$row["firstname"],$row["lastname"],$row["email"],$row["Password"],$row['phone'],$row["UserType"]));
 		}
 	}
     function getAdmins() {
